@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>StackOverflow</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="navlist">
+					<li class="nav-item">
+						<a class="nav-link" href="https://stackoverflow.com/"
+							>StackOverflow</a
+						>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="https://stackoverflow.co/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://stackoverflow.co/teams/">For Teams</a></li>
+                    <input class="search" type="text" placeholder="Search..">
+					<li class="nav-item"><a class="nav-link" href="#">Log in</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="content-left">
+				<div class="content-left-inner">
+					<h1>Join the Stack Overflow community</h1>
+					<ul>
+                        <li class="list-space">Get unstuck — ask a question</li>
+                        <li class="list-space">Unlock new privileges like voting and commenting</li>
+                        <li class="list-space">Save your favorite questions, answers, watch tags, and more</li>
+                        <li class="list-space">Earn reputation and badges</li>
+                    </ul>
+                    <p>Collaborate and share knowledge with a private group for FREE.</p>
+                    <a href="https://stackoverflow.co/teams/?utm_source=so-owned&utm_medium=product&utm_campaign=free-50&utm_content=public-sign-up">Get Stack Overflow for Teams free for up to 50 users.</a>
+				</div>
+			</div>
+			<div class="content-right">
+                <div class="content-right-inner">
+<div id="signup">
+	<a class="btn google" href="#"><i class="fa fa-google"></i>Sign up with Google</a>
+	<a class="btn github" href="#"><i class="fa fa-github"></i>Sign up with GitHup</a>
+	<a class="btn facebook" href="#"><i class="fa fa-facebook"></i>Purchase Now</a>
+</div>
+<div class="container">
+	<form action="#">
+		<label for="Dname">Display Name</label><input type="text" name="Dname" id="Dname">
+		<label for="email">Email</label><input type="email" name="email" id="email" required>
+		<label for="password">Password</label><input type="password" name="password" id="password" required>
+		<p class="password-note">Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
+		<!-- <div class="area">
+			<div class="small-area">
+			    <label class="check1 inline" for="check1"><input class="checkmark1 inline" id="check1" type="checkbox" checked > I'm not a robot</label>
+		    </div>
+		</div> -->
+		<div class="captcha-container">
+			<div class="captcha-content">
+				<div class="captcha-checkbox">
+					<input id="not-a-robot" type="checkbox" name="not-a-robot" value="true">
+		<label for="not-a-robot">I'm not a robot</label>
+				</div>
+				<div>
+					<div class="recaptcha"><i class="fa-brands fa-hornbill"></i> reCAPTCHA</div>
+					<p class="privacy">Privacy - Terms</p>
+				</div>
+			</div>
+		</div>
+<div>
+	<label class="check2 inline" for="check2"><input class="checkmark2 inline" id="check2" type="checkbox" checked > 
+		Opt-in to receive occasional product updates, user research invitations, company announcements, and digests.<i class="fa fa-question-circle" style="font-size:15px"></i></label>
+ <!-- <a href=""></a> eklenecek -->
+</div>
+<button type="submit" class="sbmt">Sign up</button>
+	</form>
+	<p class="policy">By clicking “Sign up”, you agree to our <a href="https://stackoverflow.com/legal/terms-of-service/public" class="link" target="_blank">terms of service</a> and acknowledge that you have read and understand our <a href="https://stackoverflow.com/legal/privacy-policy" class="link" target="_blank">privacy policy</a> and <a href="https://stackoverflow.com/conduct" class="link" target="_blank">code of conduct</a>.</p>
+</div>
+<div class="have-account">
+	<p class="">Already have an account? <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f" class="link">Log in</a></p>
+	<p>Are you an employer? <a href="https://talent.stackoverflow.com/users/login" class="link">Sign up on Talent </a></p>
+</div>
+                </div>
+            </div>
+		</main>
+	</body>
 </html>
