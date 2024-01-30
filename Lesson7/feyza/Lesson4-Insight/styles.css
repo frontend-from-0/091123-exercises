@@ -1,0 +1,90 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(8, 8, 110, 1) 0%, rgba(5, 4, 75, 1) 0%, rgba(41, 128, 219, 1) 0%, rgba(153, 0, 255, 1) 65%);
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  padding: 0;
+}
+.navbar {
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 28px;
+}
+
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 600;
+  color: #4faae6;
+  text-decoration: none;
+
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #8a8e97;
+  font-size: 18px;
+
+}
+
+.box {
+  background-color: #fff;
+  max-width: 600px;
+  height: 500px;
+  border-radius: 5px;
+  position: relative;
+  margin: auto;
+  margin-top: 70px;
+ 
+}
+
+h1 {
+  color: #303036;
+  text-align: left;
+  font-size: 60px;
+  margin: 30px 40px 5px  ;
+  padding: 30px 20px 5px 20px;
+  line-height: 1.2;
+  
+}
+
+h2 {
+ color: #595864;
+ font-weight: lighter;
+ font-size: 23px;
+ max-width: 450px; 
+ margin: 30px 40px 5px ;
+ padding: 0px 20px 5px 25px;
+
+}
+
+
+.button {
+  background-color: #3185FC;
+  width: 180px;
+  height: 50px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 10%;
+}
