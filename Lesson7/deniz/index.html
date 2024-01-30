@@ -1,11 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resp-design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Medium2</title>
 </head>
 <body>
+    <header>
+
+    </header>
+
+    <main>
+        
+        
+        <div class="container-top">
+
+          <div class=content-one>  
+                <h1 class="h1-top">Time-saving CSS techniques to create responsive images</h1>
+            
+                <div class="profile-info">
+                       <div class="profil-photo">
+                            <img class="small-pic" src="./img/IMG_7036.png" alt="Adrien Zaganelli"> 
+                            </div>
+            
+                            <div class="top-div">
+                            <div class="Adrien-link">
+                            <a href="#">Adrien Zaganelli</a>
+                            <a href="#"><p class="fbtn">Follow</p></a>
+                        </div> 
+                            <div class="date-min">
+                                <span>Published in</span> <a href="#">We've moved to FreecodeCamp.org/news</a><span>3 min read</span><span>Aug 12,2018</span>
+                            </div>  
+               </div>
+            </div>     
+           
+        </div>         
+            
+       
+            <div class="icons">
+                <div class="div-sol">
+                    <a href="#"><i class="fa-solid fa-hands-clapping"><p>10.4K</p></i></a>
+                    <a href="#"><i class="fa-regular fa-comment"><p>21</p></i></a>
+                
+            </div>
+                  <div>
+                    <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                    <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+                  </div>
+            </div>
+
+
+            <div class="image-container">
+                  <div class="clock-pic">
+                        <img class="clock-img" src="./img/1_aVzJTznRRfP1lM7AXe9yLw.webp" width="1000" height="751" alt="A man who works with a laptop ona clock">
+                        <figcaption>Photo by <a href="#">Kevin Ku </a><a href="#">on Unsplash</a></figcaption>
+                  </div> 
+            </div>
+        
+         
+            <div class="p-container">
+                <div class="p-inside">
+                   <p>As a web developer, there is a high probability that you have encountered the two enemies of this article: images and deadlines. Sometimes, for some reasons, your images won’t fit the layout and you don’t want to wrap your head around this for hours.</p>
+                   <p>This situation has happened to me many times and I have learned from my mistakes. No more black magic hacks — here are my five favorites techniques to handle image resizing.</p>
+                   <h1 class="">the “OMG I NEED THIS ASAP” way</h1>
+                   <pre>
+                     <span class="pre-span">
+                        
+                           .myImg {
+                          background-image: url("my-image.png");
+                          background-size: cover;
+                         }
+                       
+                    </span>
+                   </pre>
+
+                    <p>Sounds familiar? We’ve all done it once, doesn’t it feel like cheating to you?</p>
+                    <p>Using <code>background </code>properties is very useful, they just work. Yet, remember that you should use them only for non-content images or as a replacement of text and in <a href="#">some particular cases.</a></p>
+
+                    <h1 class="">The way from the future</h1>
+                    <p>What if I told you this kind of magic exists also for <img> elements? Say “hi” to the <code>object-fit</code>property — which also works for videos, by the way!
+
+                    </p>
+                    <pre>
+                     <span class="pre-span">
+                       .myImg {
+                         object-fit: cover;
+                         width: 320px;
+                         height: 180px;
+                       }
+                    </span>
+                   </pre>
+
+            
+
+                   <p>That’s all folks! See how when we retrieve the friendly value cover, we can also use <code>contain</code>.</p>
+                    <strong>
+                      Okay what’s the trap?
+                    </strong>
+                    <p>Unfortunately object-fit will not work on IE and older versions of Safari, but there is a <a href="#">polyfill</a>.</p>
+                  
+                     <div class="img-desktop">
+                        <div>
+                            <img class="desktop-schema" src="./img/1_d0wZwFpXGiAYH9_NrJCroA.webp" alt="Browser schema on desktop">
+                            <figcaption>
+                                source: <a href="#"> https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4</a>
+                            </figcaption>
+                        </div>
+                    </div>
+
+                     <!-- I skipped codepen preview -->
+
+                     <h1 class="">The “Netflix” way</h1>
+                     <p>You may think “nice trick man, one more way that doesn’t work in old browsers like IE 😔”. Don’t worry, this one works everywhere and it is my favorite! You’ll need to wrap your image with a relative padded parent.</p>
+                     <p>We will keep the image ratio with a percentage on the <code>padding </code>property. Your image will be a full size absolute child.</p>
+                     <p>The code looks like this:</p>
+
+                    <pre>
+                      <span class="pre-span">
+                        .wrapper {
+                          position: relative;
+                          padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                        }
+                     </span>
+                     <span class="pre-span">
+                      img {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: auto;
+                      }
+                      </span>
+                    </pre>
+
+                    <p>“Hey man, it looks complicated.”</p>
+                    <p>Once you get the concept, the technique is simple and <a href="#">widely used</a>. Netflix uses it!</p>
+
+                  </div> 
+                    <div>
+                            <div class="mid-picture">
+                                <img src="./img/1_rTrhAIVolZR2oQh2ou1jXg.webp" class="img-netflix" width="1000" height="751" alt="example Netflix picture">
+                                <figure>
+                                Take a look at the class names !
+                                </figure>
+                            </div>
+                        </div>
+                        
+
+                        <div class="p-inside">
+                      <h1 class="">The Simple way</h1>
+                      <p>
+                        You may already know this one:
+                       </p>
+                      <pre>
+                        <span class="pre-span">
+                          .myImg {
+                            object-fit: cover;
+                            width: 320px;
+                            height: 180px;
+                          }
+                       </span>
+                      </pre>
+                      <p>If your layout isn’t too complicated, it works in most cases.</p>
   
+                      <h1 class="">The Performance way (Advanced)</h1>
+                      <p>By performance, I mean load times. A big hero image can ruin it and make your page feel slow, especially on mobile.</p>
+                      <p>Did you know that in modern browsers you can change an image source depending on your page width? That’s what srcset is made for!</p>
+                      <p>You can combine them with the HTML 5 <picture> tag, which gracefully degrades with  <code> <br>< img ></code>an.
+  
+                      </p>
+                      <pre>
+                        <span class="pre-span">
+                          <picture>
+                            <source media="(max-width: 799px)" srcset="elva-480w.jpg">
+                            <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+                            <img src="elva-800w.jpg">
+                          </picture>
+                       </span>
+                      </pre>
+                      
+                      <h2 class="recap-header">To Recap</h2>
+                      <ol class="Recap-h">
+                        <li>Use background-image if your image is not part of the page’s content.</li>
+                        <li>Use object-fit if you don’t care about IE.</li>
+                        <li>The padded container technique, used by Netflix, works everywhere.</li>
+                        <li>In most cases, just add height: auto; in your CSS.</li>
+                        <li>If you need fast load times, use srcset to load smaller images on mobile.</li>
+                      </ol>
+                      <div>
+
+                    </div>
+            
+                    <div>
+                      <div class="last-buttons">
+                        <a href="#">CSS</a>
+                        <a href="#">Coding</a>
+                        <a href="#">Responsive Design</a>
+                        <a href="#">Tech</a>
+                        <a href="#">Programming</a>
+                      </div>
+                    </div>
+    
+        
+    </main>
 </body>
 </html>
