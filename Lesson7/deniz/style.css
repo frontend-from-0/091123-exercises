@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    
 }
 
 
@@ -12,11 +11,12 @@
     --black-darker: #242424;
     --white-darker: #F2F2F2;
     --green:  #9acd32;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 main {
-    font-family: Arial, Helvetica, sans-serif;
+    
     background-color: var(--white);
     
 }
@@ -27,37 +27,28 @@ main {
 
 
 .h1-top {
-    padding-left: 2rem;
+    padding-left: 32px;
   text-align: left;
     color:  var(--black);
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 42px;
     margin-top: 80px;
     margin-bottom: 40px;
    width: 50%;
    }
    
-   h1 {
-    text-align: left;
-    color:  var(--black);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 42px;
-    margin-top: 80px;
-    margin-bottom: 40px;
-   }
+   
 
 .content-one {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50% auto;
+  width: auto;
 }
 
 
 
   .top-div {
     display: flex;
-    
     margin-left: 10px;
     gap: 10px;
 }
@@ -65,37 +56,17 @@ main {
 
 .profile-info {
     display: flex;
-    width: 50% auto;
+    width: auto;
     flex-wrap: wrap;
 }
 
 
 
-.datum a {
-    text-decoration: none; 
-  color: black;   
-}
-
-.datum span {
-    color: var(--grey-lighter);
-}
-
-
-.folowbtn {
-    display: inline-block;
-    color: var(--green);
-   
-}
-
-
 .small-pic {
     height: 44px;
     width: 44px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 
