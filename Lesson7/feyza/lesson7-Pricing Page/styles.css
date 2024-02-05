@@ -1,0 +1,246 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+	color: #333;
+	background-color: #fff;
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    /* Applying padding and height here breaks alignment for the nav element. To fix it, you need to re-center nav elemetn inside header vertically. Flexbox can be used to do that. */
+    padding: 18px 24px;
+	height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+
+nav {
+    /* I had to set width to 100% here so that the nav element doe snot shrink after header became a flex */
+    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.logo {
+	font-size: 20px;
+}
+
+.nav-list {
+	display: flex;
+	list-style-type: none;
+	gap: 20px;
+	padding-left: 0;
+}
+
+.nav-link {
+	min-width: 48px;
+	display: inline-block;
+	text-align: center;
+}
+
+/* I added a transparent border for each nav-item by default so that they items don't jump when you hoover ofer them. Without it, using border-bottom changes the height of the elements which results in a jumpy behaviour. */
+.nav-item {
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item:hover {
+	border-bottom: 2px solid black;
+}
+
+/* 1. Change the slector to be just .btn so that the code applies to all elements with just a class 'btn' 
+2. I'm moving code related to color of the button to btn-contained and btn-outlined classes so that 'btn' class only have generic styles that all buttons share.
+3. Added display-inline-block to all 'btn' elemetns so width, height can be applied to them as well as to make sure that the are aligned as block elements. E.g. without adding it the alignment inside cards breaks.
+*/
+/* .now-link.btn { */
+.btn {
+	border-radius: 4px;
+	padding: 6px 12px;
+	font-size: 16px;
+    display: inline-block;
+}
+
+.btn:hover {
+	transition: 0.2s;
+}
+
+.btn-outlined {
+    background-color: #fff;
+	border: 1px solid #007bff;
+    color: #007bff;
+}
+.btn-outlined:hover {
+    background-color: #007bff;
+	color: #fff;
+}
+
+.btn-contained {
+    background-color: #007bff;
+	border: 1px solid #007bff;
+    color: #fff;
+}
+.btn-contained:hover {
+    background-color: #fff;
+	color: #007bff;
+}
+
+
+main {
+	text-align: center;
+}
+
+.top {
+	display: inline-block;
+	padding-top: 14px;
+	text-align: center;
+	max-width: 700px;
+}
+
+.title {
+	font-weight: 300;
+	font-size: 3.5rem;
+	line-height: 1.2;
+	font-family: inherit;
+}
+
+.paragraph {
+	font-size: 1.25rem;
+	font-weight: 300;
+	margin-top: -16px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.box {
+	border: 1px solid #dad7d7;
+	border-radius: 5px;
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+	margin: 15px;
+	width: 290px;
+    /* I removed the height here so that the card is as height as the content need otherwise there's a lot of space left at the bottom. */
+	/* height: 330px; */
+}
+
+.box-head {
+	background-color: #f7f7f7;
+	font-size: 1.5rem;
+	padding-top: 10px;
+}
+
+/*
+span.h4 {
+    text-align:center; Yazıları ortalayamadım. Bir yerde hata var kesin.
+}*/
+
+.box-body {
+    /* I think there's padding at the top as well. Also added padding to all sides. */
+	/* padding-top: 0; */
+    padding: 20px;
+}
+
+/* Sets the width of all buttons inside card to be 100% */
+.box-body > .btn {
+    width: 100%;
+} 
+
+.price {
+	font-size: 32px;
+	color: #6c757d;
+}
+
+.price2 {
+	font-weight: 500;
+	color: #000;
+	font-size: 40px;
+}
+
+.card-list {
+	list-style-type: none;
+	font-size: 17px;
+    /* Removed padding from the list, centered the text of list items instead. */
+	/* padding: 20px; */
+	/* padding-top: 0; */
+    padding-left: 0;
+    text-align: center;
+}
+
+/* I think this is a duplicated of the .btn selector above, remove this one */
+/* .btn {
+	background-color: #fff;
+	border: 1px solid #007bff;
+	border-radius: 6px;
+	color: #007bff;
+	font-size: 20px;
+	padding: 10px 55px;
+} */
+
+/*
+.demo-btn {
+    background-color: #007bff;;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    color: #fff;
+    padding: 10px 75px;
+    font-size: 20px;
+
+}
+/*
+.now-link2.btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    transition: 0.2s;
+ }*/
+
+.divider {
+	height: 1px;
+	width: 100%;
+	margin: 10px auto;
+	padding: 0;
+	background-color: #d3d3d3;
+}
+
+.container-footer {
+	max-width: 930px;
+	border-top: 1px solid #212529;
+	margin: 0 auto;
+	padding: 48px 0 0;
+	display: flex;
+    /* Text is actually left alligned inside footer */
+	/* text-align: center; */
+    /* flex-direction: row; is default, not need to set explicitly */
+	/* flex-direction: row; */
+	justify-content: space-between;
+}
+
+.footer-logo {
+	text-align: left;
+}
+
+.ul {
+	list-style-type: none;
+	text-align: left;
+	font-size: 16px;
+	color: #6c757d;
+}
+
+.container-footer > ul > li:nth-child(1) {
+	font-weight: bold;
+	font-size: 20px;
+	margin: 0 0 8px;
+	color: #000;
+}
