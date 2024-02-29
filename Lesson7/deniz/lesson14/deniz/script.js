@@ -43,8 +43,8 @@ console.log('------------------------');
 // Declare a variable lastName and initialize it to your last name as a string.
 // Declare a variable fullName and initialize it to the concatenation of firstName and lastName.
 
-const firstName = "Selcan";
-const lastName = "Ece";
+const firstName = "Denislav";
+const lastName = "Topchiev";
 const fullName = firstName + " " + lastName;
 console.log('Exercise 4:', firstName, lastName, fullName);
 console.log('------------------------');
