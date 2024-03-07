@@ -98,15 +98,15 @@ const string2Exercise13 =
 	'Bundle deal: Save $50 when you buy two products together!';
 const percentSymbol = '%';
 
-console.log('Exercise13: ');
-console.log('Exercise13: ');
+console.log('Exercise13: ',string1Exercise13.includes(percentSymbol));
+console.log('Exercise13: ',string2Exercise13.includes(percentSymbol));
 console.log('------------------------');
 // 14. Use the `substring` method to extract the word "Databases" from string stringExercise14
 // based on two indices and print it to the console.
 const stringExercise14 =
 	'Databases are an essential component of many applications.';
 
-console.log('Exercise 14: ');
+console.log('Exercise 14: ' , stringExercise14.substring("Databases"));
 console.log('------------------------');
 // 15. Remove extra spaces from the string stringExercise15 and print the result to the console.
 const stringExercise15 = '    Hello world    ';
