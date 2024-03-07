@@ -105,16 +105,17 @@ console.log('------------------------');
 // based on two indices and print it to the console.
 const stringExercise14 =
 	'Databases are an essential component of many applications.';
-
-console.log('Exercise 14: ' , stringExercise14.substring("Databases"));
+const result2 = stringExercise14.substring(0,8);
+console.log('Exercise 14: ' , result2);
 console.log('------------------------');
-// 15. Remove extra spaces from the string stringExercise15 and print the result to the console.
-const stringExercise15 = '    Hello world    ';
 
-console.log('Exercise15: ');
+// 15. Remove extra spaces from the string stringExercise15 and print the result to the console.
+const stringExercise15 = 'a    Hello world    ';
+const result3 = stringExercise15.trim();
+console.log('Exercise15: ' , result3);
 console.log('------------------------');
 // 16. Extract the price and currency from a string below using "slice" method and print it to console.
 const planPriceString = 'Premium plan - 9.99 USD/month.'; // Should return "9.99 USD"
-
-console.log('Exercise16: ');
+const planPriceStringIndexOf = planPriceString.indexOf("9.99 USD");
+console.log('Exercise16: ' , planPriceString.slice(planPriceStringIndexOf,planPriceStringIndexOf+8));
 console.log('------------------------');
