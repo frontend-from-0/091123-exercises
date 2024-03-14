@@ -108,6 +108,7 @@ console.log('Exercise 12:' , result3);
 console.log('------------------------');
 // 13. Generate a random number in a range from 11 (including) to 35 (excluding).
 const randomNumber2 = Math.floor(Math.random()*(35 - 11)+ 11);
+//Bu şekilde olmaycak mı?
 console.log(randomNumber2);
 console.log('------------------------');
 // BONUS: generate random number in a range from 0 (excluding) to 10 (including)
