@@ -234,6 +234,7 @@ function gradeLetter(letter){
 			return "Value is not supported";
 	}
 }
+console.log("Exercise 14", gradeLetter(A));
 
 // 15. Write a function that asks the user to enter their age, and then calculates and displays their age in dog years (where one human year is equivalent to
 // seven dog years). If the user enters a negative number or zero, display an error message.
