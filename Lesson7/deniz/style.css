@@ -205,7 +205,6 @@ main {
   pre .pre-span {
     display: flex;
     justify-content: start;
-    margin-left: -200px ;
   }
 
 
@@ -215,12 +214,13 @@ main {
     padding: 20px;
     position: relative;
     left: 0;
+    
     top: 0;
   width: 100%;
   height: auto;
    font-family: 'Courier New', Courier, monospace;
    font-size: 16px;
-  
+    overflow: hidden;
   }
 
 
@@ -233,6 +233,7 @@ main {
     font-weight: 100;
     font-size: 15px;
     letter-spacing: 0.05px;
+    
   }
 
 
