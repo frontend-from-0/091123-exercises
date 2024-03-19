@@ -129,8 +129,38 @@ console.log("exercise 10:", checkVoting(18, "yes"));
 
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. If the salary is less than $30,000 and the years of experience are less than 5, print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, print "We can offer you the job at the requested salary".
+function jobOffer(salary, yearsOfExperience) {
+    if (salary < 30000 && yearsOfExperience < 5) {
+        return "Sorry, we cannot offer you the job at this time";
+    } else if (salary < 50000 && yearsOfExperience >= 5 && yearsOfExperience <= 10) {
+        return "We can offer you the job at a lower salary";
+    } else {
+        return "We can offer you the job at the requested salary";
+    }
+}
+
+const offerResult = jobOffer(30000, 4);
+console.log("exercise 11:", offerResult);
 
 // 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, print "You failed the test". If the score is between 60 and 70 (inclusive), print "You passed the test, but your grade is not great". If the score is between 71 and 80 (inclusive), print "You got a B". If the score is between 81 and 90 (inclusive), print "You got an A". If the score is greater than 90, print "You got an A+ - Great job!".
+
+function testScore(score) {
+	if (score < 60) {
+	  return "You failed the test";
+	} else if (score >= 60 && score <= 70) {
+	  return "You passed the test, but your grade is not great";
+	} else if (score >= 71 && score <= 80) {
+	  return "You got a B";
+	} else if (score >= 81 && score <= 90) {
+	  return "You got an A";
+	} else {
+	  return "You got an A+ - Great job!";
+	}
+}
+
+const testResult = testScore(70);
+console.log("exercise 12:", testResult);
+
 
 // 13. Write a function that asks the user to enter a month number (1-12) and displays the corresponding season name. Use a switch statement to handle the different cases.
 
@@ -164,4 +194,38 @@ console.log('Exercise 13', getSeasonName(1), getSeasonName(5), getSeasonName(20)
 
 // 14. Write a function that asks the user to enter a grade letter (A, B, C, D, or F) and displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). Use a switch statement to handle the different cases.
 
+function checkGrade(grade) {
+    let message;
+    switch (grade) {
+        case 'A':
+        case 'B':
+        case 'C':
+            message = "Passing grade";
+            break;
+        case 'D':
+        case 'F':
+            message = "Failing grade";
+            break;
+        default:
+            message = "Invalid grade";
+    }
+    return message;
+}
+
+console.log("exercise 14:", checkGrade('B'));
+
+
+  
+  
 // 15. Write a function that asks the user to enter their age, and then calculates and displays their age in dog years (where one human year is equivalent to seven dog years). If the user enters a negative number or zero, display an error message.
+function calculateDogAge(humanAge) {
+    if (humanAge <= 0) {
+        return "Error: Please enter a positive number for age.";
+    }
+    const dogAge = humanAge * 7;
+    return "Your age in dog years is: " + dogAge;
+}
+
+console.log("exercise 15:", calculateDogAge(-1));
+
+  
