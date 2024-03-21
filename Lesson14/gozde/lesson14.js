@@ -108,14 +108,14 @@ console.log('Exercise 11:' , number12 );
 let a = 2;
 let b = 3;
 let c = a++;
-let result = c + b;
-console.log('Exercise 12:' , result );
+let result12 = c + b;
+console.log('Exercise 12:' , result12 );
 
 
 // 13. Generate a random number in a range from 11 (including) to 35 (excluding).
 
-let randomNumber = Math.floor(Math.random() * (35 - 11) + 11);
-console.log(randomNumber);
+let randomNumber13 = Math.floor(Math.random() * (35 - 11) + 11);
+console.log(randomNumber13);
 
 
 // BONUS: generate random number in a range from 0 (excluding) to 10 (including)
