@@ -1,0 +1,222 @@
+/* Responsive Design */
+
+
+@media all and (max-width: 575.99px) {
+
+
+    .h1-top {
+      display: inline-block;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 1rem;
+      font-size: 32px;
+      padding-top: 1em;
+    }
+  
+  .container-top {
+    width: 100%;
+  }
+  
+    .profile-info {
+      display: flex;
+      width: 50% auto;
+     text-align: left;
+    
+    }
+  
+    .small-pic {
+      display: none;
+    }
+  
+    .icons {
+      display: flex;
+      justify-content: space-between;
+  
+    }
+    
+    .top-div {
+      margin-top: 2em;
+      
+    }
+    
+    .top-div span {
+      margin: 0px;
+      padding: 0px;
+      text-align: left;
+      
+    }
+    
+  
+    .Adrien-link a {
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    .clock-img {
+      width: 100%;
+      height: auto;
+    }
+    
+  .p-inside {
+  
+      width: 100%;
+  }
+  
+  .img-netflix {
+    width: 100%;
+    height: auto;
+  }
+  
+  .desktop-schema {
+    width: 100%;
+    height: auto;
+  }
+  
+   .p-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    width: 100%;
+   }
+  
+    .p-container p {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  
+    .img-desktop {
+      padding: 0 10px;
+  }
+  .last-buttons {
+    display: flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0.5rem;
+  }
+  
+  
+  .pre-span {
+   width: 100%;
+  }
+  }
+  
+  
+  
+  @media all and (min-width: 576px) and (max-width: 767.98px) {
+   
+  .profile-info {
+    margin-top: 2rem;
+  display: flex;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  
+    .h1-top {
+      display: inline-block;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 1rem;
+      font-size: 32px;
+      padding-top: 1em;
+    }
+   
+  
+    .container-top {
+    width: 100%;
+    }
+  
+    .clock-img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .desktop-schema {
+      width: 100%;
+      height: auto;
+    }
+  
+    .img-netflix {
+      width: 100%;
+      height: auto;
+    }
+  
+    .p-inside {
+        width: 100%;
+    }
+  
+  }
+
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+
+    .h1-top {
+        display: inline;
+        padding-left: 2rem;
+      text-align: left;
+        color:  var(--black);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 42px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+       width: 80%;
+       }
+
+
+      .icons {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+
+      .clock-img {
+        width: 100%;
+        height: auto;
+      }
+    
+      .desktop-schema {
+        width: 100%;
+        height: auto;
+      }
+    
+      .img-netflix {
+        width: 100%;
+        height: auto;
+      }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .h1-top {
+        display: inline;
+        padding-left: 2rem;
+      text-align: left;
+        color:  var(--black);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 42px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+       width: 80%;
+       }
+
+       .clock-img {
+        width: 100%;
+        height: auto;
+      }
+    
+      .desktop-schema {
+        width: 100%;
+        height: auto;
+      }
+    
+      .img-netflix {
+        width: 100%;
+        height: auto;
+      }
+  }
