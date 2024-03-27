@@ -98,23 +98,25 @@ const string2Exercise13 =
 	'Bundle deal: Save $50 when you buy two products together!';
 const percentSymbol = '%';
 
-console.log('Exercise13: ');
-console.log('Exercise13: ');
+console.log('Exercise13: ',string1Exercise13.includes(percentSymbol));
+console.log('Exercise13: ',string2Exercise13.includes(percentSymbol));
 console.log('------------------------');
 // 14. Use the `substring` method to extract the word "Databases" from string stringExercise14
 // based on two indices and print it to the console.
 const stringExercise14 =
 	'Databases are an essential component of many applications.';
-
-console.log('Exercise 14: ');
+let stringExercise14IndexOf = stringExercise14.indexOf("Databases");
+let stringLength = "Databases".length;
+	let result2 = stringExercise14.substring(stringExercise14IndexOf,stringLength);
+	console.log('Exercise 14: ' , result2);
 console.log('------------------------');
 // 15. Remove extra spaces from the string stringExercise15 and print the result to the console.
 const stringExercise15 = '    Hello world    ';
-
-console.log('Exercise15: ');
+const result3 = stringExercise15.trim();
+console.log('Exercise15: ' , result3);
 console.log('------------------------');
 // 16. Extract the price and currency from a string below using "slice" method and print it to console.
 const planPriceString = 'Premium plan - 9.99 USD/month.'; // Should return "9.99 USD"
-
-console.log('Exercise16: ');
+let planPriceStringIndexOf = planPriceString.indexOf("9.99 USD");
+console.log('Exercise16: ' , planPriceString.slice(planPriceStringIndexOf,planPriceStringIndexOf + "9.99 USD".length));
 console.log('------------------------');
