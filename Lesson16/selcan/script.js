@@ -193,13 +193,13 @@ console.log(BMI(90,1.70));
 
 // 9. Write a function that takes in a person's age and checks if they are a child (age 0-12), teenager (age 13-19), adult (age 20-64), or senior citizen (age 65 and above) using if else statement.
 function isChild(age){
-	if (age>0 && age<12){
+	if (age>=0 && age<=12){
 		return "Exercise9:Child";
-	} else if(age>13 && age<19){
+	} else if(age>=13 && age<=19){
 	    return "Exercise9:Teenage";
-    } else if(age>20 && age<64){
+    } else if(age>=20 && age<=64){
 	    return "Exercise9:Adult";
-    } else if(age>65){
+    } else if(age>=65){
 	    return "Exercise9:Senior citizen";}
 	}
 
@@ -207,13 +207,13 @@ function isChild(age){
 
 // 10. Write a function that takes age as a number and whether they are a student (yes or no). If the age is less than 18 and the user is a student, print "You are a student and not old enough to vote". If the age is between 18 and 65 (inclusive) and the user is not a student, print "You are eligible to vote". If the age is greater than 65, print "You are a senior citizen". If the user is a student but their age is greater than or equal to 18, print "You are old enough to vote".
 
-let kisi = "student";
-function canVote(age){
+let kisi = "isStudent";
+function canVote(age,isStudent){
 	if (age<18 && kisi){
 		return "You are a student and not old enough to vote";}
 	else if (age>18 && age<65 && !kisi){
 		return "You are eligible to vote";}
-    else if(age>65){
+    else if(age>=65){
 	    return "You are a senior citizen";}
 	else if(age>=18 && kisi){
 		return"You are old enough to vote";}
@@ -239,9 +239,9 @@ function score(number){
 		return "You failed the test";
 	} else if(number>=60 && number<=70){
 		return "You passed the test, but your grade is not great";
-	} else if(number>71 && number<=80){
+	} else if(number>=71 && number<=80){
 		return "You got a B";
-	} else if(number>81 && number<=90){
+	} else if(number>=81 && number<=90){
 		return "You got an A";
 	} else if(number>90){
 		return "You got an A+ - Great job!";
@@ -283,22 +283,25 @@ console.log('Exercise 13', getSeasonName(1), getSeasonName(5), getSeasonName(20)
 function gradeLetter(letter){
 	letter=letter.toUpperCase();
 	switch(letter){
-		case A:
-		case B:
-		case C:
+		case "A":
+		case "B":
+		case "C":
 			return "you passed";
-		case D:
-		case F:
+		case "D":
+		case "F":
 			return "you failed";
 		default: 
             return "Value is not supported";
 	}
 }
-console.log(gradeLetter(D));
+console.log(gradeLetter("D"));
 // 15. Write a function that asks the user to enter their age, and then calculates and displays their age in dog years (where one human year is equivalent to seven dog years). If the user enters a negative number or zero, display an error message.
 function isYear(age){
-	let dogYear=age * 7;
-	if (age <=0)
+	
+	if (age <=0){
 	return "Value is not supported";
+}  else {
+	return age * 7;
+}
 }
 console.log(isYear(34));
