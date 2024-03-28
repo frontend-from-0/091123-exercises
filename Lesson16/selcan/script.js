@@ -281,7 +281,7 @@ console.log('Exercise 13', getSeasonName(1), getSeasonName(5), getSeasonName(20)
 
 // 14. Write a function that asks the user to enter a grade letter (A, B, C, D, or F) and displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). Use a switch statement to handle the different cases.
 function gradeLetter(letter){
-	letter=letter.toUpperCase();
+	const letterInUppercase=letter.toUpperCase();
 	switch(letter){
 		case "A":
 		case "B":
