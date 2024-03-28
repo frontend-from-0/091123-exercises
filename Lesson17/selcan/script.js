@@ -22,7 +22,7 @@ for (let i = 1; i < 20; i += 2) {
 console.log('- - - - - - - - - - - - - - - - - ');
 // 3. Write a loop that prints out the even numbers from 1 to 20.
 // 2, 4, 6...
-for (let i = 0; i < 20; i += 2) {
+for (let i = 2; i < 20; i += 2) {
 	console.log(i);
 }
 
@@ -121,6 +121,6 @@ for (const key in person) {
 const obj = { a: 10, b: 20, c: 30, d: 23 };
 let sum = 0;
 for(let x in obj) {
-sum += obj[key];
+sum += obj[x];
 }
 console.log(sum);
