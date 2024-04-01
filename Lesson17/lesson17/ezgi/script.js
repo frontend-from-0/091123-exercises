@@ -20,7 +20,7 @@ for (let i = 1; i < 20; i += 2) {
 console.log('- - - - - - - - - - - - - - - - - ');
 // 3. Write a loop that prints out the even numbers from 1 to 20.
 // 2, 4, 6...
-for(i=0;i<=20;i+=2){
+for(let i=0;i<=20;i+=2){
     console.log(i);
 }
 console.log('- - - - - - - - - - - - - - - - - ');
@@ -100,6 +100,12 @@ console.log('- - - - - - - - - - - - - - - - - ');
 // for (variable in object) {
 //   // code to be executed for each property
 // }
+let i = 1;
+do {
+  console.log(i); 
+  i++; 
+} while (i <= 10);
+
 
 // 10. Write a for...in loop that prints out the keys and values of an object.
 const person = { name: 'John', surname: 'Doe', age: 30, city: 'New York' };
@@ -111,3 +117,12 @@ for (const key in person) {
 
 // 11. Write a for...in loop that sums the values of an object.
 const obj = { a: 10, b: 20, c: 30, d: 23 };
+
+let sum = 0;
+
+for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    sum += obj[key];
+  }
+}
+console.log(sum);
