@@ -128,19 +128,19 @@ console.log("exercise 9:", checkingAge(20));
 
 // 10. Write a function that takes age as a number and whether they are a student (yes or no). If the age is less than 18 and the user is a student, print "You are a student and not old enough to vote". If the age is between 18 and 65 (inclusive) and the user is not a student, print "You are eligible to vote". If the age is greater than 65, print "You are a senior citizen". If the user is a student but their age is greater than or equal to 18, print "You are old enough to vote".
 function checkVoting(age, isStudent) {
-	if (age < 18 && isStudent === "yes") {
+	if (age < 18 && isStudent) {
 		return "You are a student and not old enough to vote";
-	} else if (age >= 18 && isStudent === "no") {
+	} else if (age >= 18 && !isStudent) {
 		return "You are eligible to vote"; 
 	} else if (age > 65) {
 		return "You are a senior citizen";
-	} else if (isStudent === "yes" && age >= 18) {
+	} else if (isStudent && age >= 18) {
 		return "You are old enough to vote";
 	} 
 }
-console.log("exercise 10:", checkVoting(17, "yes"));
-console.log("exercise 10:", checkVoting(20, "no"));
-console.log("exercise 10:", checkVoting(18, "yes"));
+console.log("exercise 10:", checkVoting(17, true));
+console.log("exercise 10:", checkVoting(20, false));
+console.log("exercise 10:", checkVoting(18, true));
 
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. If the salary is less than $30,000 and the years of experience are less than 5, print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, print "We can offer you the job at the requested salary".
