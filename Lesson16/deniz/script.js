@@ -95,6 +95,21 @@ console.log("exercise 7:", isAboveOrBelow(10));
 // 18.5 – 24.9	Healthy Weight
 // 25.0 – 29.9	Overweight
 // 30.0 and Above	Obesity
+function checkBMI(height, weight) {
+    const bmi = weight / ((height / 100) * (height / 100));
+
+	if (bmi < 18.5) {
+		return "Underweight";
+	} else if (bmi < 25) {
+		return "Healthy Weight";
+	} else if (bmi < 30) {
+		return "Overweight";
+	} else {
+		return "Obesity";
+	}
+}
+
+console.log("gezersiz 8:",checkBMI(183, 88));
 
 // 9. Write a function that takes in a person's age and checks if they are a child (age 0-12), teenager (age 13-19), adult (age 20-64), or senior citizen (age 65 and above) using if else statement.
 function checkingAge(age) {
