@@ -9,6 +9,8 @@ const address = {
 
 console.log(address.country);
 
+console.log('----------------------------');
+
 // 1. Write a function that takes an array of integers and returns the sum of all elements.
 // Input: [1, 2, 3, 4]
 // Output: 10
@@ -25,6 +27,7 @@ function getSumOfArray (numbers) {
 }
 
 console.log("Exercise 1: ", getSumOfArray(integersEx1V2), getSumOfArray(integersEx1), getSumOfArray([10, 10, 10]));
+
 console.log('----------------------------');
 // 2. Write a function that takes an array of integers and returns the average of all elements.
 //Input: [1, 2, 3, 4]
@@ -36,6 +39,7 @@ const integersEx2 = [1, 2, 3, 4];
  }
 
 console.log("Exercise 2:", getAvarege(integersEx2));
+
 console.log('----------------------------');
 // 3. Write a function that takes an array of strings and concatenates them together adding spaces.
 // Input: ["Hello", "World", "!"]
@@ -66,6 +70,7 @@ function oddArray(number){
 const tekSayilar = oddArray(arrayEx);
 
 console.log("Ex4 :" , tekSayilar );
+
 console.log('----------------------------');
 // 5. Write a function that takes an array of integers and returns a new array with even numbers only.
 // Input: [1, 2, 3, 4, 7, 10]
@@ -82,6 +87,7 @@ let evenNumbers = [];
 }
  const ciftSayilar = evenNums(testArrayEx5);
 console.log('Exercise 5: ' ,ciftSayilar);
+
 console.log('----------------------------');
 // 6. Write a function that takes an array and a value, and returns a new array with all occurrences of the value removed.ciftSayilar
 // Input: ([1, 2, 3, 4, 2], 2)
@@ -98,6 +104,7 @@ function ayrisma(arr,val){
 }
 const occList = ayrisma(testArrayEx6,2);
 console.log('Exercise 6: ' ,occList);
+
 console.log('----------------------------');
 
 /*
@@ -125,6 +132,7 @@ function removeValueFromArray(array, valueToRemove){
 }
 
 console.log("exercise 6:",removeValueFromArray(testArrayEx6, 3), removeValueFromArray(['a', 'b', 'c'], 'b'));
+
 console.log('----------------------------');
 // 7. Write a function that takes an object and returns the keys as an array.
 // Input: {name: "John", age: 30, city: "New York"}
@@ -133,6 +141,7 @@ const testObjEx7 = {name: "John", age: 30, city: "New York", isStudent: false};
 console.log(Object.keys(testObjEx7));
 
 console.log("exercise 7:" ,Object.keys(testObjEx7));
+
 console.log('----------------------------');
 // 8. Write a function that takes an object and returns the values as an array.
 // Input: {name: "John", age: 30, city: "New York"}
@@ -140,6 +149,7 @@ console.log('----------------------------');
 const testObjEx8 = {name: "John", age: 30, city: "New York"};
 
 console.log("exercise 8:", Object.values(testObjEx8));
+
 console.log('----------------------------');
 // 9. Write a function that takes an object and a key, and returns true if the key exists in the object, otherwise false.
 // Input: ({name: "John", age: 30, city: "New York"}, "age")
@@ -155,10 +165,7 @@ function ex9 (object, key) {
   return object.hasOwnProperty(key);
 }
 
-ex9(testObjEx9, 'age');
-ex9(testObjEx9, 'number');
-
-
+console.log(ex9(testObjEx9, 'age'),ex9(testObjEx9, 'number'));
 
 console.log('----------------------------');
 // 10. Write a function that takes an object and a key-value pair, and adds the key-value pair to the object.
@@ -167,11 +174,11 @@ console.log('----------------------------');
 const testObjEx10 = {name: "John", age: 30};
 testObjEx10.city = "New York";
   //  or;
-function adding(obj,key,val){
+function addKeyValuePair(obj,key,val){
     return obj[key]=val;
 }
 
-
+console.log(addKeyValuePair(testObjEx10,city,"New York"))
 
 console.log('----------------------------');
 // 11. Write a function that takes an object and a key, and removes the key-value pair from the object.
@@ -180,9 +187,9 @@ console.log('----------------------------');
 const testObjEx11 = {name: "John", age: 30, city: "New York"};
  function deleting(object,keys){
   let sonuc = delete object[keys] ;
-  return sonuc;
+  return object;
  }
-
+console.log(deleting(testObjEx11,city))
 console.log('----------------------------');
 // 12. Write a function that takes two arrays of equal length and returns an object with the first array as keys and the second array as values.
 // Input: (["name", "age", "city"], ["John", 30, "New York"])
@@ -190,9 +197,10 @@ console.log('----------------------------');
 const array1Ex12 = ["name", "age", "city"];
 const array2Ex12 = ["John", 30, "New York"];
 function comp(array1,array2){
-  let obj = {};
+  let toObject = {};
   for(let i=0;i<array1.length ; i++){
-   obj[array1[i]]=array2[i];
+    toObject[array1[i]]=array2[i];
   }
-  return obj;
+  return toObject;
 }
+console.log(comp(array1Ex12,array2Ex12))
