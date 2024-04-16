@@ -106,7 +106,7 @@ function reverse(sentence){
 	return reverse(words.slice(1).join(" ")) + " " + words[0]; 
 }
 	
-}
+
 console.log(reverse(sentenceEx8));
 
 // 9. Write a recursive function to find the length of the longest word in a sentence.
