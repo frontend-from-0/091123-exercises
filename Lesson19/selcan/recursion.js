@@ -3,17 +3,17 @@
 // 4. Write a recursive function to remove all occurrences of a specified character from a string.
 const sentenceEx5 = 'Hello, how are you?';
 const charToRemove = 'o';
- function removeO(arr,val){
+ function removeCharacter(arr,val){
 	if(arr.length===0){
-		return;
+		return "";
 	} else {
 		if (val === arr[0]){
-		return removeO(arr.slice(1),val)
+		return removeCharacter(arr.slice(1),val)
 	} else {
-		return arr[0]+removeO(arr.slice(1),val)
+		return arr[0]+removeCharacter(arr.slice(1),val)
 	}
- }
- console.log(removeO(sentenceEx5,charToRemove))
+ }}
+ console.log(removeCharacter(sentenceEx5,charToRemove))
 
 // 5. Write a recursive function to check if an array includes a specific value.
 const numbers = [1, 2, 3, 4, 5];
@@ -103,26 +103,27 @@ function reverse(sentence){
 	if(words.length===1){
 		return sentence;
 	}
+	return reverse(words.slice(1).join(" ")) + " " + words[0]; 
+}
 	
-	let reversedSentence = reverse(words.join(" "));
-	return reversedSentence;
 }
 console.log(reverse(sentenceEx8));
 
 // 9. Write a recursive function to find the length of the longest word in a sentence.
 const sentenceEx9 = 'The quick brown fox jumps over the lazy dog';
 function longestWord(sentence,longest=""){
+	if (!sentence) return longest;
 	let words = sentence.split(" ");
 	if (words.length === 0){
 		return longest;
 	}
 	let current = words.shift();
-	if (current.length > longest.length){
-		longest = current;
+	if (current.length > longest){
+		longest = current.length;
 	}
 	return longestWord(words.join(" "),longest);
 }
-console.log(longestWord(sentenceEx9,longest=""))
+console.log(longestWord(sentenceEx9))
 // 10. Write a recursive function to check if an object contains a specified property.
 const person = {
 	name: 'John',
@@ -133,10 +134,17 @@ const person = {
 	},
 };
 function check(obj, val) {
-    if (obj.hasOwnProperty(val)) {
+	for (let key in obj){
+		if(typeof obj[key] === "object"){
+			if (check(obj[key],val)){
+			return true;
+		}
+		}
+	} else if (key === val){
         return true;
-    } else {
-        return false;
     }
+	return false;
 }
+
 console.log(check(person,age));
+console.log(check(person,'city'));
