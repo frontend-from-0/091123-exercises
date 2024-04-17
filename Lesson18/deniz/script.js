@@ -43,11 +43,11 @@ console.log('----------------------------');
 
 let stringE3 = ["Hello", "World", "!"];
 
-function concatenateThemTogether (arr) {
+function cconcatenateArray (arr) {
   return arr.join(" ");
 }
 
-console.log("Exercise 3:", concatenateThemTogether(stringE3));
+console.log("Exercise 3:", concatenateArray(stringE3));
 
 console.log('----------------------------');
 // 4. Write a function that takes an array of integers and returns a new array with odd numbers only.
@@ -55,7 +55,7 @@ console.log('----------------------------');
 // Output: [1, 3, 7]
 let arrayEx = [1, 2, 3, 4, 7, 10];
 
-function arryWithOddNumbers (numbers) {
+function getOddNumbers (numbers) {
 let oddNumbers = [];  
 for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] % 2 !== 0) {
@@ -65,14 +65,14 @@ for (let i = 0; i < numbers.length; i++) {
 return oddNumbers;
 }
 
-console.log("Ex4:", arryWithOddNumbers(arrayEx));
+console.log("Ex4:", getOddNumbers(arrayEx));
 console.log('----------------------------');
 // 5. Write a function that takes an array of integers and returns a new array with even numbers only.
 // Input: [1, 2, 3, 4, 7, 10]
 // Output: [1, 2, 4, 10]
 const testArrayEx5 = [1, 2, 3, 4, 7, 10];
 
-function arrayWithEvenNumbers(numbers) {
+function getEvenNumbers(numbers) {
   let evenNumbers = [];
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
@@ -83,7 +83,7 @@ return evenNumbers;
 }
 
 
-console.log('Exercise 5: ', arrayWithEvenNumbers(testArrayEx5));
+console.log('Exercise 5: ', getEvenNumbers(testArrayEx5));
 console.log('----------------------------');
 // 6. Write a function that takes an array and a value, and returns a new array with all occurrences of the value removed.
 // Input: ([1, 2, 3, 4, 2], 2)
@@ -139,13 +139,13 @@ console.log('----------------------------');
 // Output: false
 const testObjEx9 = {name: "John", age: 30, city: "New York", number: undefined};
 
-function ex9 (object, key) {
+function keyExists (object, key) {
 return object.hasOwnProperty(key);
 }
 
 
 
-console.log("Ex 9:", ex9(testObjEx9, 'age'),
+console.log("Ex 9:", keyExists(testObjEx9, 'age'),
 ex9(testObjEx9, "surname"));
 
 console.log('----------------------------');
@@ -154,11 +154,11 @@ console.log('----------------------------');
 // Output: {name: "John", age: 30, city: "New York"}
 const testObjEx10 = {name: "John", age: 30};
 
-function ex10 (object, key, value) {
+function addKeyValuePair (object, key, value) {
   object[key] = value;
   return object;
 }
-console.log("exemple 10:", ex10(testObjEx10, "city", "New York"));
+console.log("exemple 10:", addKeyValuePair(testObjEx10, "city", "New York"));
 console.log('----------------------------');
 // 11. Write a function that takes an object and a key, and removes the key-value pair from the object.
 // Input: ({name: "John", age: 30, city: "New York"}, "city")
@@ -180,8 +180,10 @@ const array1Ex12 = ["name", "age", "city"];
 const array2Ex12 = ["John", 30, "New York"];
 
 function arraysToObject (keys, values) {
-let obj = [];
-
+let obj = {};
+if (keys.length !== values.length) {
+  return obj;
+}
   for (let i = 0; i < keys.length; i++) {
     obj[keys[i]] = values[i];
 
