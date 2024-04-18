@@ -9,7 +9,7 @@ const address = {
 
 console.log(address.country);
 
-console.log('----------------------------');
+console.log('----------------------------'); 
 
 // 1. Write a function that takes an array of integers and returns the sum of all elements.
 // Input: [1, 2, 3, 4]
@@ -165,7 +165,7 @@ function ex9 (object, key) {
   return object.hasOwnProperty(key);
 }
 
-console.log(ex9(testObjEx9, 'age'),ex9(testObjEx9, 'number'));
+console.log("exercise 9:",ex9(testObjEx9, 'age'),ex9(testObjEx9, 'number'));
 
 console.log('----------------------------');
 // 10. Write a function that takes an object and a key-value pair, and adds the key-value pair to the object.
@@ -174,22 +174,25 @@ console.log('----------------------------');
 const testObjEx10 = {name: "John", age: 30};
 testObjEx10.city = "New York";
   //  or;
-function addKeyValuePair(obj,key,val){
-    return obj[key]=val;
+  function addKeyValuePair(obj, key, val) {
+    return obj[key] = val; 
 }
 
-console.log(addKeyValuePair(testObjEx10,city,"New York"))
+console.log("exercise 10:", addKeyValuePair(testObjEx10, 'city', 'New York'));
+console.log(testObjEx10); 
 
 console.log('----------------------------');
 // 11. Write a function that takes an object and a key, and removes the key-value pair from the object.
 // Input: ({name: "John", age: 30, city: "New York"}, "city")
 // Output: {name: "John", age: 30}
 const testObjEx11 = {name: "John", age: 30, city: "New York"};
- function deleting(object,keys){
-  let sonuc = delete object[keys] ;
+ 
+function deleting(object, key) {
+  delete object[key];
   return object;
- }
-console.log(deleting(testObjEx11,city))
+}
+
+console.log("Exercise 11:", deleting(testObjEx11, "city"));
 console.log('----------------------------');
 // 12. Write a function that takes two arrays of equal length and returns an object with the first array as keys and the second array as values.
 // Input: (["name", "age", "city"], ["John", 30, "New York"])
@@ -203,4 +206,4 @@ function comp(array1,array2){
   }
   return toObject;
 }
-console.log(comp(array1Ex12,array2Ex12))
+console.log("exercise 12:",comp(array1Ex12,array2Ex12))
