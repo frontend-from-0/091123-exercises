@@ -189,7 +189,7 @@ const testObjEx11 = {name: "John", age: 30, city: "New York"};
  
 function deleting(object, key) {
   delete object[key];
-  return object;
+  return object;a
 }
 
 console.log("Exercise 11:", deleting(testObjEx11, "city"));
