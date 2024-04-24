@@ -159,15 +159,15 @@ console.log('----------------------------');
 // Output: false
 const testObjEx9 = {name: "John", age: 30, city: "New York", number: undefined};
 
-function ex9 (object, key) {
-  console.log(object[key]);
+function ex9(object, key) {
+  return key in object;
 }
 
-ex9(testObjEx9, 'age');
-ex9(testObjEx9, 'number');
+const testObjEx9 = { name: "John", age: 30, city: "New York", number: undefined };
 
+console.log("Input 1: ", ex9(testObjEx9, "age")); // Output: true
+console.log("Input 2: ", ex9(testObjEx9, "surname")); // Output: false
 
-console.log("Ex 9:");
 
 console.log('----------------------------');
 // 10. Write a function that takes an object and a key-value pair, and adds the key-value pair to the object.
