@@ -112,9 +112,9 @@ console.log(reverse(sentenceEx8));
 
 // 9. Write a recursive function to find the length of the longest word in a sentence.
 const sentenceEx9 = 'The quick brown fox jumps over the lazy dog';
-function longestWord(sentence,longest=""){
+function longestWord(sentence,longest=0){
 	
-	if (!sentence) return longest;
+	
   if (!sentence) return longest;
 	let words = sentence.split(" ");
 	if (words.length === 0){
