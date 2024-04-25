@@ -115,6 +115,7 @@ const sentenceEx9 = 'The quick brown fox jumps over the lazy dog';
 function longestWord(sentence,longest=""){
 	
 	if (!sentence) return longest;
+  if (!sentence) return longest;
 	let words = sentence.split(" ");
 	if (words.length === 0){
 		return longest;
