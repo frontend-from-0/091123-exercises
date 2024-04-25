@@ -92,6 +92,7 @@ function maxDepth(obj){
 		}
 	}
   }
+ return max + 1;
 }
 
 // 8. Write a recursive function to reverse the order of words in a sentence.
