@@ -94,7 +94,7 @@ function maxDepth(obj){
   }
  return max + 1;
 }
-
+console.log(maxDepth(nestedObjEx7));
 // 8. Write a recursive function to reverse the order of words in a sentence.
 const sentenceEx8 = 'Hello, how are you?';
 
