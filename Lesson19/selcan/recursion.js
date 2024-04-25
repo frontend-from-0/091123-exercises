@@ -62,7 +62,7 @@ function flattenObj(obj){
 			flatObj[key]=obj[key];
 		}
 	}
-	return flatObj
+	return flatObj;
 }
 console.log(flattenObj(nestedObj));
 
