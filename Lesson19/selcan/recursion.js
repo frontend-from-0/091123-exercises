@@ -3,14 +3,14 @@
 // 4. Write a recursive function to remove all occurrences of a specified character from a string.
 const sentenceEx5 = 'Hello, how are you?';
 const charToRemove = 'o';
- function removeCharacter(arr,val){
-	if(arr.length===0){
+ function removeCharacter(sentence,val){
+	if(sentence.length===0){
 		return "";
 	} else {
-		if (val === arr[0]){
-		return removeCharacter(arr.slice(1),val)
+		if (val === sentence[0]){
+		return removeCharacter(sentence.slice(1),val)
 	} else {
-		return arr[0]+removeCharacter(arr.slice(1),val)
+		return sentence[0]+removeCharacter(sentence.slice(1),val)
 	}
  }}
  console.log(removeCharacter(sentenceEx5,charToRemove))
@@ -98,7 +98,7 @@ function maxDepth(obj){
 const sentenceEx8 = 'Hello, how are you?';
 
 function reverse(sentence){
-	let reversedSentence ={};
+	
 	let words=sentence.split(" ");
 	if(words.length===1){
 		return sentence;
@@ -112,6 +112,7 @@ console.log(reverse(sentenceEx8));
 // 9. Write a recursive function to find the length of the longest word in a sentence.
 const sentenceEx9 = 'The quick brown fox jumps over the lazy dog';
 function longestWord(sentence,longest=""){
+	
 	if (!sentence) return longest;
 	let words = sentence.split(" ");
 	if (words.length === 0){
@@ -138,13 +139,14 @@ function check(obj, val) {
 		if(typeof obj[key] === "object"){
 			if (check(obj[key],val)){
 			return true;
-		}
+		
 		}
 	} else if (key === val){
         return true;
     }
 	return false;
 }
+}
 
-console.log(check(person,age));
+console.log(check(person,"age"));
 console.log(check(person,'city'));
