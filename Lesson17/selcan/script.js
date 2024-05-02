@@ -81,11 +81,11 @@ for (let i = 0; i < 6; i++) {
 	console.log('Hello');
 }
 // 7. Write a while loop that counts from 10 to 1 and prints out each number.
-let sayi = 10;
-while (sayi > 0) {
-	console.log(sayi);
+let sayi1 = 10;
+while (sayi1 > 0) {
+	console.log(sayi1);
 
-	sayi--;
+	sayi1--;
 }
 console.log('- - - - - - - - - - - - - - - - - ');
 // 8. Write a while loop that generates random numbers between 1 and 10 until a number greater than 8 is generated, and then prints out the total number of iterations.
