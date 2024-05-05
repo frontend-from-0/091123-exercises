@@ -11,14 +11,15 @@ class Person {
     }
 }
 class Student extends Person {
-    constructor(name,age,gender){
-        super(name,"yüzmeyi çok sever.",gender)
+    constructor(name,age,gender,major){
+        super(name,"yüzmeyi çok sever.",gender);
+        this._major = major;
     }
     greet(){
-        return `I don't like swiming.`
+        return `Hi,my name is ${this._name},I'm ${this.age} years old.I'm ${this._gender}My major is ${this._major}.`
     }
 }
-const Student1 = new Student("Ali",23,"erkek");
+const Student1 = new Student("Ali",23,"erkek","Matematik");
 console.log(Student1.greet());
 console.log(Student1);
 const Person1 = new Person("jale",54,"kadin");
@@ -47,12 +48,12 @@ class Square extends Shape{
     }
 }
 const square1 = new Square("kare","blue",20)
-const Shape1 = new Shape("kare","pink");
-console.log("1:",Shape1.description());
+const shape1 = new Shape("kare","pink");
+console.log("1:",shape1.description());
 console.log("2:",square1);
 console.log("3:",square1._area);
 console.log("4:",square1.description());
-console.log("5:",Shape1.description());
+console.log("5:",shape1.description());
 
 
 
@@ -61,7 +62,7 @@ console.log("5:",Shape1.description());
 // 3. Create a Vehicle class with make, model, and year properties, and a start() method that logs a message to the console indicating that the vehicle has started. Then create a Car class that extends the Vehicle class and adds a numDoors property. Override the start() method in the Car class to log a different message to the console indicating that the car has started.
 
 class Vehicle {
-    constructor(make,model,year){
+    constructor(make,model,year,){
         this._make = make;
         this._model = model;
         this._year = year;
@@ -71,15 +72,16 @@ class Vehicle {
     }
 }
 class Car extends Vehicle{
-    constructor(make,model,year){
-        super(make,model,year)
+    constructor(make,model,year,numDoors){
+        super(make,model,year);
+        this._numDoors=numDoors;
     }
     start(){
-        console.log(`${this._make} mali,${this._model} model car has started.`)
+        console.log(`${this._make} ${this._model} with ${this._numDoors} has started.`)
     }
 }
 const Vehicle1 = new Vehicle("Çin","Ford",2016);
-const Car1 = new Car("Alman","Mercedes",2020)
+const Car1 = new Car("Alman","Mercedes",2020,4)
 
 
 Vehicle1.start();
@@ -97,10 +99,53 @@ class BankAccount{
         this._transactionHistory = [];
 
     }
-    deposit(amount){
-        this._balance += balance;
-
+    get balance(){
+        return this._balance;
     }
-    // I could'nt make the rest of it.
+   
+     deposit(amount) {
+        this._balance += amount;
+        this._transactionHistory.push({ 
+            type: "deposit", 
+            amount : amount ,
+             date: new Date().toLocaleDateString() });
+    }
+     withdraw(amount) {
+        if (amount > this._balance) {
+         console.log("Insufficient funds, please try smaller amount.");
+            return;
+         } 
+         this._balance -= amount;
+         this._transactionHistory.push({
+            type:"withdrawal",
+            amount:amount,
+            date:new Date().toLocaleDateString()
+         }) ; 
+        
+    }
+    get transactionHistory(){
+        return this._transactionHistory;
+    }
+    get currentBalance() {
+        let balance = this._balance;
+        for (const transaction of this._transactionHistory) {
+            if (transaction.type === "deposit") {
+                balance += transaction.amount;
+            } else if (transaction.type === "withdrawal") {
+                balance -= transaction.amount;
+            }
+        }
+    return balance;
+}
 }
 
+const account = new BankAccount(1000, 0.05);
+
+
+account.deposit(500);
+account.withdraw(200);
+
+
+console.log("Transaction History:");
+console.log(account.transactionHistory);
+console.log("Current Balance:", account.currentBalance);
