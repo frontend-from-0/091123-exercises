@@ -22,8 +22,8 @@ class Student extends Person {
 }
 
 const person = new Person("Messi ", 36, " Male");
-const student = new Student("Deniz", 18, "Computer Science");
-console.log(person.greet(), student.greet(),);
+const student = new Student("Deniz", 18, "Male", "Computer Science");
+console.log(person.greet(), student.greet());
 
 // 2. Create a Shape class with name and color properties, and a describe() method that logs a description of the shape to the console (e.g. "This is a blue square"). Then create a Square class that extends the Shape class and adds sideLength and area properties. Override the describe() method in the Square class to log a description of the square to the console (e.g. "This is a blue square with a side length of 5 and an area of 25").
 class Shape {
@@ -84,27 +84,57 @@ class BankAccount {
     constructor(balance, interestRate) {
       this.balance = balance;
       this.interestRate = interestRate;
+      this.transactionHistory = [];
+
     }
   
     deposit(amount) {
       this.balance += amount;
+      this.transactionHistory.push({
+        type: "deposit",
+        amount: amount,
+        date: new Date().toLocaleDateString()
+      });
       console.log(`Deposited ${amount} into the account. Current balance: ${this.balance}`);
     }
   
     withdraw(amount) {
-      if (amount <= this.balance) {
-        this.balance -= amount;
-        console.log(`Withdrawn ${amount} from the account. Current balance: ${this.balance}`);
-      } else {
-        console.log("Insufficient balance.");
+        if (amount <= this.balance) {
+          this.balance -= amount;
+          this.transactionHistory.push({
+            type: "withdrawal",
+            amount: amount,
+            date: new Date().toLocaleDateString()
+          });
+          console.log(`Withdrawn ${amount} from the account. Current balance: ${this.balance}`);
+        } else {
+          console.log("Insufficient balance.");
+        }
+      }
+  
+      getTransactionHistory() {
+        // Return a copy of the transaction history array
+        return [...this.transactionHistory];
+      }
+    
+      getCurrentBalance() {
+        // Calculate the current balance based on the transaction history
+        let balance = this.balance;
+        for (const transaction of this.transactionHistory) {
+          if (transaction.type === "deposit") {
+            balance += transaction.amount;
+          } else {
+            balance -= transaction.amount;
+          }
+        }
+        return balance;
       }
     }
-  }
-  
+
   // Example usage
   const account = new BankAccount(1000, 0.05);
   account.deposit(500);
   account.withdraw(200);
-  console.log(account.balance); // Accessing the current balance directly
-  
+  console.log(account.getCurrentBalance); // Accessing the current balance directly
+  console.log(account.getTransactionHistory);
 //   this last exewrcise was very hard and complicated for me:( and I got some help from chatgpt!
