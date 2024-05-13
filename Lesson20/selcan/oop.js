@@ -12,7 +12,7 @@ class Person {
 }
 class Student extends Person {
     constructor(name,age,gender,major){
-        super(name,"yüzmeyi çok sever.",gender);
+        super(name,age,gender);
         this._major = major;
     }
     greet(){
