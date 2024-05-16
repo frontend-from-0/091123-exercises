@@ -17,11 +17,12 @@ formElement.addEventListener('submit', function (event) {
 	
 
 	const span = document.createElement('span');
-	span.innerText = formInput.value;
+	
 	const inputValue = formInput.value.trim();
 	if(inputValue.length < 3){
+	 span.innerText = formInput.value;
 	alert('Please enter at least 3 characters.');
-    return
+    return;
 }
     button.addEventListener('click', function () {
 		listItem.remove();
@@ -40,7 +41,8 @@ formElement.addEventListener('submit', function (event) {
   // TODO: Clear input element after everything is done in this function
   span.addEventListener(click,function(){
 	span.classList.toggle('completed');
-	inputValue.remove();
+	// inputValue.remove();
+	formInput.value = "";
 })
 });
   
