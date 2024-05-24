@@ -25,9 +25,8 @@ formElement.addEventListener('submit', function (event) {
 	listItem.append(span);
 	listItem.append(button);
 	list.append(listItem);
-	console.log(listItem);
 	  // TODO: Clear input element after everything is done in this function
-  span.addEventListener(click,function(){
+    span.addEventListener(click,function(){
 	span.classList.toggle('completed');	
 })
 formInput.value = "";
