@@ -22,7 +22,7 @@ for (let i = 1; i < 20; i += 2) {
 console.log('- - - - - - - - - - - - - - - - - ');
 // 3. Write a loop that prints out the even numbers from 1 to 20.
 // 2, 4, 6...
-for (let i = 0; i < 20; i += 2) {
+for (let i = 2; i <= 20; i += 2) {
 	console.log(i);
 }
 
@@ -47,7 +47,7 @@ let minNumberEx5 = findMinNumberInArray[0];
 
 for (let i = 1; i < findMinNumberInArray.length; i++) {
 	if (findMinNumberInArray[i] < minNumberEx5) {
-		minNumberEx5 < findMinNumberInArray[i];
+		minNumberEx5 = findMinNumberInArray[i];
 		console.log(minNumberEx5);
 	}
 }
@@ -125,9 +125,7 @@ const obj = { a: 10, b: 20, c: 30, d: 23 };
 let sum = 0;
 
 for (let key in obj) {
-  sum += obj[key];
+	sum = sum += obj[key];
 }
 
 console.log("Sum of object values:", sum); // Output: Sum of object values: 83
-
-// 11. örneği chatgpt ye sorarak yaptım ama tam olarak anlamadım nasıl olduğunu.
