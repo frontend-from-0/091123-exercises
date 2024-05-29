@@ -45,7 +45,7 @@ form.addEventListener('submit', function (event) {
 		ageInputError.textContent = 'Please enter a number between 1-120:)';
 		isFormCorrect = false;
 	} else {
-		ageInputErron.textContent = '';
+		ageInputError.textContent = '';
 	}
 
 
