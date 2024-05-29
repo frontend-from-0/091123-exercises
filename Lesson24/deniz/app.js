@@ -64,7 +64,8 @@ form.addEventListener('submit', function (event) {
 		name: nameInput.value,
 		email: emailInput.value,
 		surname: surnameInput.value,
-		ageInput: ageInput.value,
+		age: ageInput.value,
+		phone: phoneInput.value
 	};
 
 	if (isFormCorrect) {
