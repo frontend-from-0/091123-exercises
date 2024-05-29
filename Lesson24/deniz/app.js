@@ -54,7 +54,7 @@ form.addEventListener('submit', function (event) {
 
 	if (!phoneRegex.test(phoneInput.value)) {
 		phoneInputError.textContent = 'Please enter a valid phone number.';
-		isFormCorrect = false
+		isFormCorrect = false;
 	} else {
 		phoneInputError.textContent = '';
 	}
@@ -64,7 +64,7 @@ form.addEventListener('submit', function (event) {
 		name: nameInput.value,
 		email: emailInput.value,
 		surname: surnameInput.value,
-		ageInput: ageInput.value,
+		age: ageInput.value,
 	};
 
 	if (isFormCorrect) {
