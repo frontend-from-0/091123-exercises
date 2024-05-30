@@ -51,7 +51,7 @@ form.addEventListener('submit', function (event) {
 		phoneInputError.textContent ="Please enter your phone number in true format";
 		isFormCorrect = false;
 	} else {
-		phoneInputError = '';
+		phoneInputError.textContent = '';
 	}
 
 	const formData = {
