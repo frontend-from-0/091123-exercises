@@ -21,36 +21,32 @@
             border-radius: 25px;
             background-color: white;
             max-width: 100%;
+            max-height: 70%;
             padding: 30px;
             display: flex;
             flex-direction: row;  
          }
-         @media all and (max-width: 768px) {
-        .kapsayici{
-            background-color: white;
+          @media all and (max-width: 768px) {
+       
         }
-         .anaMenu{
-            flex-direction:column-reverse;
-            height:100%;
-            max-width: 1000PX;;
-         }
+        
+     
         .sagEkran{
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      
             display: flex;
-            justify-content: space-between;
+            justify-content:flex-end;
          }
         .sagEkran>img{
-            width: 90%;
             height: auto;
-            border-radius:20px;
-            position: absolute;
-            left: 0;
-            top: 0;
+            width: 90%;
+            max-width: 720px;
+            border-radius: 25px;
         }
          h2{
-            font-size: 30px;
-            padding: 0 20px;
+            font-size: 50px;
+            font-weight: 1000px;
+            padding:0  20px;
+            margin-top: 30px;
          }
          ul{
             line-height: 30px;
@@ -59,7 +55,6 @@
          }
          li{
             display: flex;
-            justify-content: center;
             align-items: center;
             padding-left:10px;  
          }
@@ -71,13 +66,15 @@
             height: 35px;
             border-radius: 5px;
             margin-bottom: 20px;
+            padding: 20px;
+            
          }
          button{
             width:calc(100% + 10px);
-            height: 50px;
+            height: 60px;
             background-color: rgb(4, 4, 30);
             color: white;
-            padding: 5px auto;
+            padding: 15px auto;
             border-radius: 10px;
             cursor: pointer; 
          }
@@ -113,7 +110,8 @@
             </li>  
             <li><i class="fa-solid fa-circle-check"></i><span> to ensure updates are success</span> 
             </li>
-            <li><i class="fa-solid fa-circle-check"></i><span>And much more!</span></li><li>
+            <li><i class="fa-solid fa-circle-check"></i><span>And much more!</span>
+            </li>
             </ul>
             <form id="subscribeForm" novalidate>
             <label for="email" class="form-label" >Email Address:</label>
@@ -123,7 +121,7 @@
             <button>Subscribe to monthly newsletter</button></form>
         </div>
         <div class="sagEkran">
-            <img src="./1.png" alt="resim1">
+            <img src="./1.jpg" alt="Orange colored image with the number 94 on.">
         </div>
         </div>
     </div>
@@ -138,9 +136,7 @@
 if (!emailRegex.test(emailInput.value)){
     emailError.textContent='Valid email required.';
    isFormCorrect=false;
-}   else {
-   emailError.textContent ='';
-}
+} 
 })
     </script>
 </body>
