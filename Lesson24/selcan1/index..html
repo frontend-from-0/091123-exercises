@@ -9,6 +9,7 @@
       *{
          box-sizing: border-box;
       }
+      
         .kapsayici{
             width: 100%;
             height:100vh;
@@ -24,29 +25,26 @@
             max-height: 70%;
             padding: 30px;
             display: flex;
-            flex-direction: row;  
+            flex-direction: row; 
+            justify-content: space-between; 
+            align-items: center;
+            flex-wrap: wrap;  
          }
-          @media all and (max-width: 768px) {
-       
-        }
-        
-     
         .sagEkran{
-      
             display: flex;
-            justify-content:flex-end;
+            justify-content: center;
          }
         .sagEkran>img{
             height: auto;
             width: 90%;
             max-width: 720px;
             border-radius: 25px;
+            justify-content:center;
         }
          h2{
             font-size: 50px;
             font-weight: 1000px;
-            padding:0  20px;
-            margin-top: 30px;
+            margin-top: 30px 0;
          }
          ul{
             line-height: 30px;
@@ -90,15 +88,84 @@
             display: flex; 
             justify-content: flex-end;  
         }
-      
-       
 
-       
+
+
+
+        .hidden {
+           display: none;
+          }
+        #confirmation-container{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            } 
+         .kapsayici1{
+            width: 100%;
+             height:100vh;
+            background-color: rgb(60, 60, 104); 
+            display: flex; 
+            justify-content: center;  
+            align-items: center;
+              
+         }
+        .anaMenu1{
+            border-radius: 25px;
+            background-color: white;
+            width: 30%;
+            height: 40%;
+            padding:40px 40px 10px 40px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            text-align:start;  
+         }
+         #tickIcon{
+         color: red;
+         font-size: 50px;
+         } 
+         #buton {
+        background-color: black;
+        color: white;
+        display: block;
+        height: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+      }  
+      @media all and (max-width: 768px) {
+        .anaMenu{
+            border-radius:none;
+            background-color: white;
+            max-width: 100%;
+            max-height: 70%;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+           flex-direction: column-reverse;  
+           align-items: center;  
+         }
+         .solEkran,.sagEkran{
+            width: 100%;
+         }
+        .sagEkran{
+            
+            margin-top: 20;  
+        } 
+        .solEkran{
+           
+            text-align: center;
+        }
+        .sagEkran > img{
+            width: 200%;
+            max-width: none;
+        }
+       }
+      
     </style>
 </head>
 <body>
-    <div class="kapsayici">
-        
+     <div class="kapsayici">
        <div class="anaMenu">
         <div class="solEkran">
             <h2>Stay Updated!</h2>
@@ -125,6 +192,17 @@
         </div>
         </div>
     </div>
+    <div id="confirmation-container" class="hidden">
+        <div class="kapsayici1">
+            <div class="anaMenu1">
+             <i class="fa-solid fa-circle-check" id="tickIcon"></i>
+             <h1>Thanks for subscribing!</h1>
+             <p>A comfirmation mail has been sent to <strong><span id="emailDisplay"></strong></span>.Please open it and click the button inside to confirm your subscribtion.</p>
+             <button id="buton">Dismiss Message</button>  
+            </div>
+        </div>
+       
+    </div>
     <script>
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const form = document.getElementById("subscribeForm");
@@ -133,11 +211,29 @@
          let isFormCorrect =true;
         const emailInput = document.getElementById("email");
         const emailError = document.getElementById("emailError");
-if (!emailRegex.test(emailInput.value)){
-    emailError.textContent='Valid email required.';
-   isFormCorrect=false;
-} 
-})
+        const formContainer = document.querySelector(".kapsayici");
+        const confirmationContainer = document.getElementById("confirmation-container");
+        const emailDisplay=document.getElementById("emailDisplay");
+        
+        emailError.textContent = '';
+        if (!emailRegex.test(emailInput.value)){
+            emailError.textContent='Valid email required.';
+            isFormCorrect=false;
+           } 
+           if(isFormCorrect){
+            formContainer.classList.add("hidden");
+            confirmationContainer.classList.remove("hidden");
+            emailDisplay.textContent=emailInput.value;
+           } 
+        })
+           document.getElementById("buton").addEventListener("click",function(){
+            const formContainer = document.querySelector(".kapsayici");
+        const confirmationContainer = document.getElementById("confirmation-container");
+            confirmationContainer.classList.add("hidden");
+            formContainer.classList.remove("hidden");
+           });
+         
+       
     </script>
 </body>
 </html>
