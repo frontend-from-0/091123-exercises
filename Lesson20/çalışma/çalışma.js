@@ -102,8 +102,48 @@ console.log("elma:",ürün.getStock("elma"));
 //     addMember metodunu ekleyin. Bu metod, yeni bir üye eklemelidir.
 //     lendBook metodunu ekleyin. Bu metod, belirli bir kitabı bir üyeye ödünç vermelidir. Kitap mevcut değilse bir hata mesajı döndürmelidir.
 //     returnBook metodunu ekleyin. Bu metod, ödünç alınan bir kitabı geri almalıdır.
+class library{
+    constructor(books,members){
+        this.books=new Set();
+        this.members=new Set();
+        this.lentBook=new Map();
+    }
+    addBook(name){
+      this.books.add(name);
+      return `${name} isimli kitap kütüphaneye eklendi.`
+    }
+    addMember(member){
+        this.members.add(member);
+        return `${member} isimli üye  eklendi.`
+    }
+    lendBook(name,member){
+        if(this.books.has(name)){
+           this.books.delete(name);
+           this.lentBook.set(name,member);
+           return `${name} kitabı ${member} isimli üyeye ödünç verildi.`;
+        }else if(!this.members.has(member)){
+        return `${member} isimli üye mevcut değil.`
+        } else if(this.lentBook.has(name)){
+            return `${name} kitabı zaten ödünç verilmiş.`
+        }else{
+            console.log("Bu kitap elimizde yok.") 
+        }
+    }
+    returnBookName(name){
+        if(this.lentBook.has(name)){
+           this.lentBook.delete(name);
+           this.books.add(name);
+           return `${name} kitabı geri alındı.`;
+        } else{
+            return `${name} kitabı ödünç verilmemiş veya mevcut değil.`;
+        }
+    }
+}
 
-
+const kitap1=new library;
+console.log(kitap1.addBook("yüzüklerin efendisi"));
+console.log(kitap1.lendBook("kara kiş","Ali"));
+console.log(kitap1.returnBookName("kara kiş","Ali"));
 
 
 // 4. Sıcaklık Dönüştürücü
