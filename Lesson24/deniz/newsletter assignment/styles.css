@@ -117,6 +117,12 @@ h1 {
     width: 100%;
 }
 
+.label-email {
+    font-weight: bold;
+}
+
+
+
 
 @media (max-width: 768px) {
     .card {
