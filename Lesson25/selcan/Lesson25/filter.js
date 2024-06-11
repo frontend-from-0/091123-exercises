@@ -339,7 +339,7 @@ const studentsExercise9 = [
 		grade: 'B-',
 	},
 	]
-	console.log("Exercise9:",studentsExercise9.filter(student => student.grade === "D" || student.grade === "F" ||student.grade === "D+")) ;
+	console.log("Exercise9:",studentsExercise9.filter(student => student.grade[0].toUpperCase() !== "D" || student.grade[0].toUpperCase() !== "F" || student.grade[0].toUpperCase() !== "D"));
 
 
 
