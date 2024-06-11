@@ -184,7 +184,7 @@ const sentencesExercise5 = [
 	'The aroma of freshly brewed coffee permeated the air, enticing passersby to indulge in a cup of warmth.',
 	'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
-console.log("Exercise5:",[...sentencesExercise5].filter(item => item.split(" ").length<=10))
+console.log("Exercise5:",sentencesExercise5.filter(item => item.split(" ").length<=10))
 
 
 // Exercise 6:
