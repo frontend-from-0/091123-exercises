@@ -3,8 +3,8 @@ const API_KEY = '3HO6COGJ_0Qsi2DxSVvlppxQBAHZj4jCPBlARAusM3g';
 
 // TODO: Add a new button in HTML to crear the screen
 
-const button = document.getElementById('fetch-button');
-button.addEventListener('click', function () {
+const fetchButton = document.getElementById('fetch-button');
+fetchButton.addEventListener('click', function () {
   let picCount = parseInt(document.getElementById("pic-count").value) || 10;
   
   if (picCount <= 0) {
@@ -15,13 +15,13 @@ button.addEventListener('click', function () {
   fetch(`https://api.unsplash.com/photos/random?count=${picCount}&client_id=${API_KEY}`)
     .then(response => {
       if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
+        throw new Error("Network response was not ok " + response.statusText);  //status text ne anlama geliyor?
       }
       return response.json();
     })
     .then(data => {
       if (data.errors) {
-        throw new Error(data.errors[0]); // burada neden (data.errors[0]) kullaniyoruz ?
+        throw new Error(data.errors[0]); 
       }
       const imageContainer = document.getElementById("image-container");
 
@@ -33,20 +33,23 @@ button.addEventListener('click', function () {
 
         imageElement.src = imageData.urls.small;
         imageWrapper.append(imageElement);
-        document.getElementById("image-container").append(imageWrapper);
+        imageContainer.append(imageWrapper);
+
       })
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
-      alert('Error fetching images. Please try again later.');
+      document.getElementById('error-message').textContent = 'Error fetching images. Please try again later.';
     });
 
-  const clearButton = document.getElementById("clear-button");
-  clearButton.addEventListener('click', function () {
-    const imageContainer = document.getElementById("image-container");
-    imageContainer.innerHTML = "";
-  })
+
 });
+
+const clearButton = document.getElementById("clear-button");
+clearButton.addEventListener('click', function () {
+  const imageContainer = document.getElementById("image-container");
+  imageContainer.innerHTML = "";
+})
 // iki kere const imageContainer degiskeni kullandim ama sorun olmadi bunuda anlamadim!? sanirim 
 // iki farkli scope oldugu icin mi ?
 // bu derste zorlandim bakmadan veya yardim almadan yapamiyorum.
