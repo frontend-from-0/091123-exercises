@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+.carousel {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0,5s ease-in-out;
+    border-radius: 15px;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+.carousel-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+}
+
+.carousel-btn {
+    padding: 5px 20px;
+    background-color: #f9e5c3;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    color: #4b4a4a;
+    font-size: 15px;
+    
+}
+/* prev-next butonları şeffaf olmadı, yapamadım*/
+
+
+.carousel-indicaors {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.indicator {
+    width: 40px;
+    height: 10px;
+    background-color: #efbbcf;
+    border-radius: 50px;
+    margin: 0 50px;
+}
+/* indicatorları nasıl resimlerin üzerine koyuyorduk yapamadım. */
+
+.indicator.active {
+    background-color: #555;
+}
