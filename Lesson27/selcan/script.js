@@ -33,11 +33,11 @@ fetch(postId,{
 .then(response=>response.json())
 .then(data=>{
     console.log("başari ile güncellendi:",data);
-    document.getElementById("message").innerText=("Güncelleme başarili.");
+    document.getElementById("message").value=("Güncelleme başarili.");
 })
 .catch(error=>{
     console.error("hata oluştu",error);
-    document.getElementById("message").innerText=("Güncelleme başarisiz.");
+    document.getElementById("message").value=("Güncelleme başarisiz.");
 });
 });
 // 4. Show confirmation to the user if update operation was successful
