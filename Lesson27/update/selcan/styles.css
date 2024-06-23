@@ -71,3 +71,6 @@ ul {
 .button--danger:hover {
   background-color: #79000cf4;
 }
+#message{
+  padding: 20px;
+}
