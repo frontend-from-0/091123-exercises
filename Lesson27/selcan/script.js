@@ -33,13 +33,31 @@ function getPosts() {
 				updateButton.setAttribute('id', 'update-button');
 				updateButton.setAttribute('class', 'button button--success');
 				updateButton.innerText = 'Update Post';
-        updateButton.href = `http://127.0.0.1:5502/Lesson27/update/update-post.html?postId=${post.id}`;
+                updateButton.href = `http://127.0.0.1:5502/Lesson27/update/update-post.html?postId=${post.id}`;
 
 		        const deleteButton=document.createElement('a');
 				deleteButton.setAttribute("id","delete-button");
 				deleteButton.setAttribute("class","button button--danger");
 				deleteButton.innerText="Delete Post";
-				deleteButton.href=`http://127.0.0.1:5502/Lesson27/delete/date/delete-post.html?postId=${post.id}`;
+				deleteButton.addEventListener("click",function(){
+					fetch(URL,{
+						method:"DELETE",
+					})
+					.then(response=>{
+						if(response.ok){
+							return response.json()
+					}else{
+						throw new Error("post silinemedi.")
+					}
+					
+				})
+				.then(data=>{
+					const result=document.getElementById("result");
+					result.innerHTML="post başari ile silindi."
+				})
+				.catch(error=>{
+						console.error('Hata:', error)});
+					})
 
 
 				const listItem = document.createElement('li');
@@ -104,6 +122,8 @@ function createPost() {
 	})
 	
 		.catch((error) => console.error('Error:', error));
+
+		
 }
 
 
