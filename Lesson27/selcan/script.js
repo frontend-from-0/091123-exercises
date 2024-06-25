@@ -70,42 +70,46 @@ function getPosts() {
 		});
 }
 
-const fetchOnePosts = document.getElementById('fetch-one-button');
-fetchOnePosts.addEventListener('click', getPostById(postId));
+// const fetchOnePosts = document.getElementById('fetch-one-button');
+// fetchOnePosts.addEventListener('click', getPostById(postId));
 
-function getPostById(postId) {
-	fetch(URL)
-	.then(response=>{
-		if(!response.ok){
-			throw new Error('Ağ yaniti düzgün değildi');
-		}
-		return response.json();
-	})
-	.then(post=>{
-		const postContainer=document.createElement("div");
-		postContainer.innerHTML="";
+// function getPostById(postId) {
+// 	fetch(URL)
+// 	.then(response=>{
+// 		if(!response.ok){
+// 			throw new Error('Ağ yaniti düzgün değildi');
+// 		}
+// 		return response.json();
+// 	})
+// 	.then(post=>{
+// 		const postContainer=document.createElement("div");
+// 		postContainer.innerHTML="";
 
-		const title=document.createElement("h2");
-		title.innerHTML=post.title;
+// 		const title=document.createElement("h2");
+// 		title.innerHTML=post.title;
 
-		const paragraph=document.createElement("p");
-		paragraph.innerText=post.body;
+// 		const paragraph=document.createElement("p");
+// 		paragraph.innerText=post.body;
 
-		postContainer.append(title);
-		postContainer.append(paragraph);
+// 		postContainer.append(title);
+// 		postContainer.append(paragraph);
 
-		document.getElementById("fetch-one-button").append(postContainer);
-	})
-	.catch(error=>{
-		console.error('Hata:', error)
-	});
-}
+// 		document.getElementById("fetch-one-button").append(postContainer);
+// 	})
+// 	.catch(error=>{
+// 		console.error('Hata:', error)
+// 	});
+// }
 
 // TODO: move this to the script file attached to the create-post.html page
+
+const createPosts = document.getElementById('create-button');
+createPosts.addEventListener('click', createPost);
 function createPost() {
 	fetch(URL)
 	.then((response)=>response.json())
-	.then((post)=>{
+	.then((posts)=>{
+		posts.forEach((post) =>{
 		const title=document.createElement("h2");
 		title.innerHTML=post.title;
 		
@@ -113,12 +117,13 @@ function createPost() {
 		paragraph.innerText=post.body;
 		
 		const postContainer=document.createElement("div");
-	    postContainer.innerHTML="";
+	    
 
         postContainer.append(title);
 	    postContainer.append(paragraph);
 
 		document.getElementById("post-container").append(postContainer);
+	});
 	})
 	
 		.catch((error) => console.error('Error:', error));		
