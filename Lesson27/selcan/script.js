@@ -118,12 +118,10 @@ function createPost() {
         postContainer.append(title);
 	    postContainer.append(paragraph);
 
-		document.getElementById("create-button").append(postContainer);
+		document.getElementById("post-container").append(postContainer);
 	})
 	
-		.catch((error) => console.error('Error:', error));
-
-		
+		.catch((error) => console.error('Error:', error));		
 }
 
 
