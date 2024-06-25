@@ -12,7 +12,7 @@ button.addEventListener('click', function(){
   const imageCount=document.getElementById("image-count").value;
 
   fetch(`https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY}`)
-  .then(response => response.json()) //res or response
+  .then(response => response.json())
   .then(data => {
     if(data !== -1){
       throw new Error('Ağ yaniti düzgün değil.');
