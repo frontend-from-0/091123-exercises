@@ -70,36 +70,36 @@ function getPosts() {
 		});
 }
 
-// const fetchOnePosts = document.getElementById('fetch-one-button');
-// fetchOnePosts.addEventListener('click', getPostById(postId));
+const fetchOnePosts = document.getElementById('fetch-one-button');
+fetchOnePosts.addEventListener('click', getPostById('1'));
 
-// function getPostById(postId) {
-// 	fetch(URL)
-// 	.then(response=>{
-// 		if(!response.ok){
-// 			throw new Error('Ağ yaniti düzgün değildi');
-// 		}
-// 		return response.json();
-// 	})
-// 	.then(post=>{
-// 		const postContainer=document.createElement("div");
-// 		postContainer.innerHTML="";
+function getPostById(postId) {
+	fetch(URL)
+	.then(response=>{
+		if(!response.ok){
+			throw new Error('Ağ yaniti düzgün değildi');
+		}
+		return response.json();
+	})
+	.then(post=>{
+		const postContainer=document.createElement("div");
+		postContainer.innerHTML="";
 
-// 		const title=document.createElement("h2");
-// 		title.innerHTML=post.title;
+		const title=document.createElement("h2");
+		title.innerHTML=post.title;
 
-// 		const paragraph=document.createElement("p");
-// 		paragraph.innerText=post.body;
+		const paragraph=document.createElement("p");
+		paragraph.innerText=post.body;
 
-// 		postContainer.append(title);
-// 		postContainer.append(paragraph);
+		postContainer.append(title);
+		postContainer.append(paragraph);
 
-// 		document.getElementById("fetch-one-button").append(postContainer);
-// 	})
-// 	.catch(error=>{
-// 		console.error('Hata:', error)
-// 	});
-// }
+		document.getElementById("fetch-one-button").append(postContainer);
+	})
+	.catch(error=>{
+		console.error('Hata:', error)
+	});
+}
 
 // TODO: move this to the script file attached to the create-post.html page
 
@@ -129,19 +129,12 @@ function createPost() {
 		.catch((error) => console.error('Error:', error));		
 }
 
-
+const deletePosts = document.getElementById('delete-button');
+deletePosts.addEventListener('click', deletePost);
 function deletePost() {
-	const title=document.createElement("h2");
-	title.innerHTML=post.title;
 	
-	const paragraph=document.createElement("p");
-	paragraph.innerText=post.body;
-	
-	const postContainer=document.createElement("div");
+	const postContainer=document.getElementById("post-container");
 	postContainer.innerHTML="";
-
-	postContainer.append(title);
-	postContainer.append(paragraph);
 
 	document.getElementById("delete-button").append(postContainer);
 }
