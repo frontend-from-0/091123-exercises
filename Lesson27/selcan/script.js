@@ -35,31 +35,14 @@ function getPosts() {
 				updateButton.innerText = 'Update Post';
                 updateButton.href = `http://127.0.0.1:5502/Lesson27/update/update-post.html?postId=${post.id}`;
 
-		        const deleteButton=document.createElement('a');
-				deleteButton.setAttribute("id","delete-button");
+		        const deleteButton=document.createElement('button');
 				deleteButton.setAttribute("class","button button--danger");
 				deleteButton.innerText="Delete Post";
-				deleteButton.addEventListener("click",function(){
-					fetch(URL,{
-						method:"DELETE",
-					})
-					.then(response=>{
-						if(response.ok){
-							return response.json()
-					}else{
-						throw new Error("post silinemedi.")
-					}
-					
-				})
-				.then(data=>{
-					const result=document.getElementById("result");
-					result.innerHTML="post başari ile silindi."
-				})
-				.catch(error=>{
-						console.error('Hata:', error)});
-					})
+				deleteButton.addEventListener("click",() =>deletePost(post.id));
 
-
+				const createButton = document.getElementById("create-button");
+				createButton.href =`C:\Users\OMEN\Desktop\yazilim\github dosyaları\ 091123-exercises\Lesson27\selcan\create\create-post.html`;
+				
 				const listItem = document.createElement('li');
 				listItem.append(title);
 				listItem.append(paragraph);
@@ -70,71 +53,14 @@ function getPosts() {
 		});
 }
 
-const fetchOnePosts = document.getElementById('fetch-one-button');
-fetchOnePosts.addEventListener('click', getPostById('1'));
-
-function getPostById(postId) {
-	fetch(URL)
-	.then(response=>{
-		if(!response.ok){
-			throw new Error('Ağ yaniti düzgün değildi');
-		}
-		return response.json();
-	})
-	.then(post=>{
-		const postContainer=document.createElement("div");
-		postContainer.innerHTML="";
-
-		const title=document.createElement("h2");
-		title.innerHTML=post.title;
-
-		const paragraph=document.createElement("p");
-		paragraph.innerText=post.body;
-
-		postContainer.append(title);
-		postContainer.append(paragraph);
-
-		document.getElementById("fetch-one-button").append(postContainer);
-	})
-	.catch(error=>{
-		console.error('Hata:', error)
+function deletePost(postId) {
+	fetch(`${URL}/${postId}`, {
+		method: 'DELETE',
 	});
 }
 
-// TODO: move this to the script file attached to the create-post.html page
-
-const createPosts = document.getElementById('create-button');
-createPosts.addEventListener('click', createPost);
-function createPost() {
-	fetch(URL)
-	.then((response)=>response.json())
-	.then((posts)=>{
-		posts.forEach((post) =>{
-		const title=document.createElement("h2");
-		title.innerHTML=post.title;
-		
-		const paragraph=document.createElement("p");
-		paragraph.innerText=post.body;
-		
-		const postContainer=document.createElement("div");
-	    
-
-        postContainer.append(title);
-	    postContainer.append(paragraph);
-
-		document.getElementById("post-container").append(postContainer);
+function createPost(postId){
+    fetch(`${URL}/${postId}`, {
+		method:"POST",
 	});
-	})
-	
-		.catch((error) => console.error('Error:', error));		
-}
-
-const deletePosts = document.getElementById('delete-button');
-deletePosts.addEventListener('click', deletePost);
-function deletePost() {
-	
-	const postContainer=document.getElementById("post-container");
-	postContainer.innerHTML="";
-
-	document.getElementById("delete-button").append(postContainer);
 }

@@ -1,43 +1,38 @@
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('postId');
 
-//  TODO: 1. Fetch post data for the post with given postId
-fetch(postId)
-.then((response)=>response.json())
-.then(data=>console.log(data))
-.catch(error=>console.error("hata:",error))
-
-
-// 2. Prefill form with post title and post body
-document.getElementById("title").innerText=("Örnek Başlik");
-document.getElementById("body").innerText=("Bu bir örnek içeriktir.")
-// 3. Select form element and attache 'submit' event listener to it, send new post information with UPDATE request
-const formElement=document.getElementById("postForm");
-formElement.addEventListener('submit',function upDate(e){
-e.preventDefault();
-const title=document.getElementById("title").value;
-const body=document.getElementById("body").value;
-
-const data={
-    title:title,
-    body:body
-};
-
-fetch(postId,{
-    method:"PUT",
-    headers:{
-        "content-type":"application/json"
-    },
-    body:JSON.stringify(data)
-})
-.then(response=>response.json())
-.then(data=>{
-    console.log("başari ile güncellendi:",data);
-    document.getElementById("message").value=("Güncelleme başarili.");
-})
-.catch(error=>{
-    console.error("hata oluştu",error);
-    document.getElementById("message").value=("Güncelleme başarisiz.");
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://jsonplaceholder.typicode.com/posts/' + postId)
+  .then((response) => response.json())
+  .then((post) => {
+    document.getElementById('title-input').value = post.title;
+    document.getElementById('body-input').value = post.body;
+  })
+.catch((error) => console.error('Error:', error));
 });
+
+const formElement = document.getElementById('update-post-form');
+
+formElement.addEventListener('submit', function () {
+	event.preventDefault();
+
+	const postTitleText = document.getElementById('title-input').value;
+	console.log('postTitleText', postTitleText);
+	const postBodyText = document.getElementById('body-input').value;
+	console.log('postBodyText', postBodyText);
+
+  // Valid form input!!!
+
+    fetch('https://jsonplaceholder.typicode.com/posts/' + postId, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          title: postTitleText,
+          body: postBodyText
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
 });
-// 4. Show confirmation to the user if update operation was successful
