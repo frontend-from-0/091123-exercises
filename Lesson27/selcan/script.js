@@ -33,15 +33,13 @@ function getPosts() {
 				updateButton.setAttribute('id', 'update-button');
 				updateButton.setAttribute('class', 'button button--success');
 				updateButton.innerText = 'Update Post';
-                updateButton.href = `http://127.0.0.1:5502/Lesson27/update/update-post.html?postId=${post.id}`;
+                updateButton.href = `update-post/update-post.html?postId=${post.id}`;
 
 		        const deleteButton=document.createElement('button');
 				deleteButton.setAttribute("class","button button--danger");
 				deleteButton.innerText="Delete Post";
 				deleteButton.addEventListener("click",() =>deletePost(post.id));
 
-				const createButton = document.getElementById("create-button");
-				createButton.href =`C:\Users\OMEN\Desktop\yazilim\github dosyaları\ 091123-exercises\Lesson27\selcan\create\create-post.html`;
 				
 				const listItem = document.createElement('li');
 				listItem.append(title);
@@ -59,8 +57,4 @@ function deletePost(postId) {
 	});
 }
 
-function createPost(postId){
-    fetch(`${URL}/${postId}`, {
-		method:"POST",
-	});
-}
+
