@@ -89,4 +89,13 @@ form{
 .hidden{
   display: none;
 }
+#success-container{
+  display: flex;
+  justify-content: center;
+  border: #333 solid 1px;
+  max-width: 300px;
+  align-content: center;
+  
+}
+
 

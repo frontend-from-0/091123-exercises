@@ -27,14 +27,14 @@ fetch(URL,{
         .then((json) =>{ 
           console.log(json);
         console.log("Başari ile kaydedildi.");
+       
        })
         .catch((error) => {
           console.error('Error:', error);
+         
      
     });
   } 
-  if(isFormCorrect) {
-    document.getElementById(success-container).remove("hidden");
-    document.getElementById(container).add.classList("hidden")
-  }
-
+ 
+   
+  

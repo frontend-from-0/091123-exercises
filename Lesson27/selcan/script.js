@@ -39,7 +39,7 @@ function getPosts() {
 				deleteButton.setAttribute("class","button button--danger");
 				deleteButton.innerText="Delete Post";
 				deleteButton.addEventListener("click",() =>deletePost(post.id));
-
+                
 				
 				const listItem = document.createElement('li');
 				listItem.append(title);
