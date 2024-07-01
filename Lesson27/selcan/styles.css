@@ -79,13 +79,6 @@ label{
 
 .button--danger:hover {
   background-color: #79000cf4;
-  #container{
-    display: none;
-  }
-  #success-container{
-    display:block;
-  }
-
 }
 form{
   display: flex;
@@ -93,7 +86,7 @@ form{
   margin: 30px auto;
   max-width: 600px;
 }
-#success-container{
+.hidden{
   display: none;
 }
 

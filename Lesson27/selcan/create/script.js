@@ -8,6 +8,7 @@ createPost();
 
 });
 
+isFormCorrect=true;
 function createPost() {
 const titleText = document.getElementById("titleInput").value;
 const bodyText = document.getElementById("bodyInput").value;
@@ -31,5 +32,9 @@ fetch(URL,{
           console.error('Error:', error);
      
     });
-  }  
+  } 
+  if(isFormCorrect) {
+    document.getElementById(success-container).remove("hidden");
+    document.getElementById(container).add.classList("hidden")
+  }
 
