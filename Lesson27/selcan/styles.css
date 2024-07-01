@@ -43,10 +43,19 @@ ul {
   color: #666;
   margin: 0;
 }
+input,textarea{
+  min-height: 30px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+label{
+  font-size: 20px;
+}
 
 .button {
   padding: 10px 20px;
-  
+  margin-top: 10px;
   color: white;
   border: none;
   border-radius: 4px;
@@ -70,6 +79,13 @@ ul {
 
 .button--danger:hover {
   background-color: #79000cf4;
+  #container{
+    display: none;
+  }
+  #success-container{
+    display:block;
+  }
+
 }
 form{
   display: flex;
@@ -77,3 +93,7 @@ form{
   margin: 30px auto;
   max-width: 600px;
 }
+#success-container{
+  display: none;
+}
+
