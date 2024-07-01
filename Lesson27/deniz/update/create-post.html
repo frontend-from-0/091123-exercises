@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create Post</h1>
+        <form action="" id="create-post-form">
+            <label for="create-title-post">Title</label>
+            <input type="text" id="create-title-post">
+
+            <label for="create-body-post">Body</label>
+            <textarea id="create-body-post" required></textarea>
+
+            <button id="create-btn" class="create-button">
+                Create Post
+            </button>
+        </form>
+        <p id="message" style="display: none;"></p> <!-- Mesajı göstermek için -->
+
+    </div>
+    <script src="create-post.js"></script>
+
+</body>
+
+</html>
