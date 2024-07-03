@@ -8,6 +8,14 @@ formElement.addEventListener('submit', function (event) {
 
   // TODO: check that input value has correct format (e.g. minimum 3 chars, no extra spaces)
 
+  const inputValue = formInput.value.trim();
+	const firstLetterUpperCase = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+
+	if (inputValue.length < 3) {
+		alert("Please enter a todo with at least 3 characters.");
+		return;
+	}
+
 	const listItem = document.createElement('li');
 
 	const button = document.createElement('button');
@@ -21,7 +29,9 @@ formElement.addEventListener('submit', function (event) {
 	const span = document.createElement('span');
 	span.innerText = formInput.value;
   // TODO: Add event listener for click event. When click happens, we need to toggle 'completed' class on the span
-  span.classList.toggle("completed");
+  span.addEventListener("click", function () {
+	span.classList.toggle("completed");
+})
 	listItem.append(span);
 	listItem.append(button);
 
