@@ -9,6 +9,7 @@ createPost();
 });
 
 isFormCorrect=true;
+
 function createPost() {
 const titleText = document.getElementById("titleInput").value;
 const bodyText = document.getElementById("bodyInput").value;
@@ -27,14 +28,12 @@ fetch(URL,{
         .then((json) =>{ 
           console.log(json);
         console.log("Başari ile kaydedildi.");
-       
+         window.location.href = `Lesson27\selcan\index.html?postId=${json.id}` 
        })
         .catch((error) => {
           console.error('Error:', error);
-         
-     
-    });
+    });   
   } 
- 
+ ;
    
   

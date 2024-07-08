@@ -23,6 +23,7 @@ h1 {
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 80px;
 }
 
 .post {
@@ -38,7 +39,6 @@ ul {
   color: #333;
   margin: 0 0 10px;
 }
-
 .post-body {
   color: #666;
   margin: 0;

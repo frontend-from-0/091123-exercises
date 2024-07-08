@@ -33,8 +33,13 @@ function getPosts() {
 				updateButton.setAttribute('id', 'update-button');
 				updateButton.setAttribute('class', 'button button--success');
 				updateButton.innerText = 'Update Post';
-                updateButton.href = `update-post/update-post.html?postId=${post.id}`;
+                updateButton.addEventListener("click",function(e){
+					e.preventDefault(e);
+					window.location.href= `update-post/update-post.html?postId=${post.id}`;
+				});
+				
 
+				
 		        const deleteButton=document.createElement('button');
 				deleteButton.setAttribute("class","button button--danger");
 				deleteButton.innerText="Delete Post";
@@ -57,4 +62,6 @@ function deletePost(postId) {
 	});
 }
 
+function updatePost(){
 
+}
