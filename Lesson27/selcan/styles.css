@@ -23,7 +23,7 @@ h1 {
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 80px;
+  margin:80px;
 }
 
 .post {
@@ -32,7 +32,10 @@ ul {
   margin-bottom: 20px;
   padding: 20px;
 }
-
+#message{
+ display: flex;
+ justify-content: center;
+}
 .post-title {
   font-size: 20px;
   font-weight: bold;
@@ -63,20 +66,15 @@ label{
   cursor: pointer;
   margin-bottom: 20px;
 }
-
 .button--success {
   background-color: #4CAF50;
 }
-
 .button--success:hover {
   background-color: #45a049;
 }
-
-
 .button--danger {
   background-color: #7a0916;
 }
-
 .button--danger:hover {
   background-color: #79000cf4;
 }
@@ -95,7 +93,20 @@ form{
   border: #333 solid 1px;
   max-width: 300px;
   align-content: center;
-  
 }
-
+#butonElement{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.buttonElement{
+  padding: 20px;
+  margin-left:40%;
+  margin-top: 40px;
+  background-color: #4CAF50;
+  color: white;
+} 
+.buttonElement:hover {
+  background-color: #45a049;
+}
 

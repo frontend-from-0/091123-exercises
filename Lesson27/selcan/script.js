@@ -33,19 +33,19 @@ function getPosts() {
 				updateButton.setAttribute('id', 'update-button');
 				updateButton.setAttribute('class', 'button button--success');
 				updateButton.innerText = 'Update Post';
-                updateButton.addEventListener("click",function(e){
+				updateButton.addEventListener("click", function (e) {
 					e.preventDefault(e);
-					window.location.href= `update-post/update-post.html?postId=${post.id}`;
+					window.location.href = `update-post/update-post.html?postId=${post.id}`;
 				});
-				
 
-				
-		        const deleteButton=document.createElement('button');
-				deleteButton.setAttribute("class","button button--danger");
-				deleteButton.innerText="Delete Post";
-				deleteButton.addEventListener("click",() =>deletePost(post.id));
-                
-				
+
+
+				const deleteButton = document.createElement('button');
+				deleteButton.setAttribute("class", "button button--danger");
+				deleteButton.innerText = "Delete Post";
+				deleteButton.addEventListener("click", () => deletePost(post.id));
+
+
 				const listItem = document.createElement('li');
 				listItem.append(title);
 				listItem.append(paragraph);
@@ -56,12 +56,25 @@ function getPosts() {
 		});
 }
 
+
+
 function deletePost(postId) {
 	fetch(`${URL}/${postId}`, {
-		method: 'DELETE',
-	});
-}
+		method: 'DELETE'
+	})
+		.then((response) => {
+			const successMessage = "Your post was deleted successfully...";
+			let messageElement = document.getElementById("message");
+			if (!messageElement) {
+				messageElement = document.createElement("div");
+				messageElement.setAttribute("id", "message");
+				document.body.append(messageElement);
+			}
+			messageElement.textContent = successMessage;
+			console.log("Your post was deleted successfully...");
 
-function updatePost(){
-
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+		});
 }
