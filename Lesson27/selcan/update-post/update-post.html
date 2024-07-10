@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Update post</title>
-		<link rel="stylesheet" type="text/css" href="../styles.css" />
-	</head>
-	<body>
-		<div class="container">
+
+<head>
+	<title>Update post</title>
+	<link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+
+<body>
+	<div id="post">
+		<div id="post-container">
 			<h1>Update post</h1>
-      
-	   <form id="update-post-form">
-		<label for="title-input" >Post title</label>
-		<input type="text" id="title-input" name="title" >
 
-		<label for="body-input">Post body</label>
-		<textarea id="body-input" ></textarea>
+			<form id="update-post-form">
+				<label for="title-input">Post title</label>
+				<input type="text" id="title-input" name="title">
 
-		<button type="submit" class="button button--success">Update post</button>
-	   </form>
-	   <div id="message"></div>
-			
-		<script src="script.js"></script>
-	</body>
+				<label for="body-input">Post body</label>
+				<textarea id="body-input"></textarea>
+
+				<button type="submit" class="button button--success">Update post</button>
+			</form>
+		</div>
+		<div id="message"></div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
 </html>

@@ -1,64 +1,59 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
 }
-
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
-
 h1 {
   text-align: center;
   color: #333;
+  margin-top:60px  ;
 }
-
 ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
-  padding: 0;
-  margin:80px;
+  margin: auto 20%;
 }
-
-.post {
-  background-color: #fff;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  padding: 20px;
+#message {
+  margin: 30px auto;
+  text-align: center;
+  width: 100%;
 }
-#message{
- display: flex;
- justify-content: center;
+#post-container{
+  width: 100%;
 }
-.post-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin: 0 0 10px;
+#post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.post-body {
-  color: #666;
-  margin: 0;
-}
-input,textarea{
+input,
+textarea {
   min-height: 30px;
   margin-bottom: 10px;
   margin-top: 5px;
   font-size: 20px;
 }
-label{
+label {
   font-size: 20px;
 }
-
 .button {
   padding: 10px 20px;
   margin-top: 10px;
+  margin-right: 50px;
   color: white;
   border: none;
   border-radius: 4px;
@@ -68,6 +63,7 @@ label{
 }
 .button--success {
   background-color: #4CAF50;
+  text-decoration: none;
 }
 .button--success:hover {
   background-color: #45a049;
@@ -78,35 +74,37 @@ label{
 .button--danger:hover {
   background-color: #79000cf4;
 }
-form{
+.fetch-button {
   display: flex;
-  flex-direction: column; 
+  justify-content: space-evenly;
+}
+form {
+  display: flex;
+  flex-direction: column;
   margin: 30px auto;
   max-width: 600px;
 }
-.hidden{
+.hidden {
   display: none;
 }
-#success-container{
+#success-container {
   display: flex;
   justify-content: center;
   border: #333 solid 1px;
   max-width: 300px;
   align-content: center;
 }
-#butonElement{
+#butonElement {
   display: flex;
   justify-content: center;
   padding: 20px;
 }
-.buttonElement{
+.buttonElement {
   padding: 20px;
-  margin-left:40%;
-  margin-top: 40px;
   background-color: #4CAF50;
   color: white;
-} 
+  max-width: 300px;
+}
 .buttonElement:hover {
   background-color: #45a049;
 }
-

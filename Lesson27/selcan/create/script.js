@@ -35,10 +35,10 @@ function createPost() {
       const buttonElement = document.createElement("button");
       buttonElement.setAttribute("class", "buttonElement");
       buttonElement.innerText = "Turn to main screen";
-      document.body.append(buttonElement);
+      document.getElementById("post").append(buttonElement);
 
       buttonElement.addEventListener("click",() =>{
-      window.location.href = `../index.html?fetch post`;
+      window.location.href = `../index.html?`;
       });
     })
     .catch((error) => {
