@@ -12,10 +12,11 @@ formElement.addEventListener('submit', function (event) {
 	const firstLetterUpperCase = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
 
 	if (inputValue.length < 3) {
-		alert("Please enter a todo with at least 3 characters.");
+		document.getElementById('errorMsg').innerText = "Please enter a todo with at least 3 characters.";
 		return;
 	}
-
+	document.getElementById('errorMsg').innerText ="";
+	
 	const listItem = document.createElement('li');
 
 	const button = document.createElement('button');
