@@ -13,4 +13,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 100px;
+}
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px;
+  background-color:#F4F6FA;
+  width: 70%;
+  height: 40%;
+  margin: auto;
+  border: blue 1px solid;
+  align-content: center;
+}
+.icon{
+  padding: 20px 50px;
+ display: block;
+  background-color: white;
+  padding-right: 200px;
+  border-radius:15px;
+  margin-top: 30px;
+}
+.fa-code{
+  color: orange;
 }
