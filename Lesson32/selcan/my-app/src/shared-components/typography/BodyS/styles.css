@@ -1,0 +1,14 @@
+h2 {
+ 
+  color:#313E51;
+  font-size: 20px;
+  font-family: Rubik;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 30px;
+  word-wrap: break-word
+}
+
+.bold {
+  font-weight: 500;
+}
