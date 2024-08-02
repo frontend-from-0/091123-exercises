@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="container">
+  <div class="form-container">
+    <form id="myForm" novalidate>
+
+<h1>Stay Updated!</h1>
+<p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+<ul class="list-item">
+    <li><i class='fas fa-check-circle'></i>Product discovery and bulding what matters</li>
+    <li>Measuring to ensure updates are success</li>
+    <li>And much more!</li>
+</ul>
+<div class="email-top">
+<label for="email" class="form-label">Email address</label>
+<div id="emailError" class="error"></div>
+</div>
+<input type="email" id="email" name="email" placeholder="email@company.com" class="form-input" required>
+
+<button type="submit" value="Submit" class="submit-button">Subscribe to monthly newsletter</button>
+
+  </form>
+</div>
+
+<div>
+    <img class="img-desktop" src="img_desktop.jpg" alt="">
+    <img class="img-mobile" src="img_mobile.jpg" alt="">
+</div> 
+</div>
+
+<div id="confirm">
+<h1>Thanks for subscribing!</h1>
+<p>A confirmation email has been sent to <span id="emailInput">wdawd</span>. 
+    Please open and click the button inside the your subscription</p>
+    <button type="submit" value="Submit" class="submit-button">Dismiss message</button>
+
+</div>
+<script src="app.js"></script>
+
+</body>
+
+</html>
