@@ -1,6 +1,7 @@
 const formElement = document.getElementById('toDoForm');
 const formInput = document.getElementById('toDoInput');
 const list = document.getElementById('toDoList');
+const errorMessage = document.getElementById('error-message');
 
 formElement.addEventListener('submit', function (event) {
 	// By default, the page is reloded when form is submitted. To avoid it, we need to add `preventDefault()`;
@@ -9,15 +10,15 @@ formElement.addEventListener('submit', function (event) {
   // TODO: check that input value has correct format (e.g. minimum 3 chars, no extra spaces)
     const inputValue = formInput.value.trim();
 	if (inputValue.length < 3) {
-        alert('To-Do item must be at least 3 characters long');
+        errorMessage.textContent = 'To-Do item must be at least 3 characters long';
         return;
     }
 	if (/^\d+$/.test(inputValue)) {
-        alert('To-Do item can not be only numbers');
+        errorMessage.textContent = 'To-Do item can not be only numbers';
         return;
     }
 	if (inputValue.length === 0) {
-		alert('To-Do item cannot be empty.');
+		errorMessage.textContent = 'To-Do item cannot be empty.';
 		return;
 	}
 

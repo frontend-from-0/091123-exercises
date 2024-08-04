@@ -83,3 +83,9 @@ li:last-child {
   text-decoration: line-through;
   color: gray;
 }
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
