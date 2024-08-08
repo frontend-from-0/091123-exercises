@@ -3,6 +3,6 @@ import './styles.css';
 export const Display = ({title, bold}) => {
 
   return (
-    <h2 className={bold ? 'bold' : ''}>{title}</h2>
+    <h1 className={bold ? 'bold' : ''}>{title}</h1>
   );
 }
