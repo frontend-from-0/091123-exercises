@@ -1,8 +1,8 @@
 import './styles.css';
 
-export const Display = ({title, bold}) => {
+export const Display = ({title,dis}) => {
 
   return (
-    <h1 className={bold ? 'bold' : ''}>{title}</h1>
+    <h1 className={dis? 'dis' : ''}>{title}</h1>
   );
 }

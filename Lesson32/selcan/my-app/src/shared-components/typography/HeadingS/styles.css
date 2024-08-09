@@ -1,12 +1,8 @@
-h2 {
+.headS {
   color:#313E51;
   font-size: 28px;
   font-family: Rubik;
   font-weight: 500;
   line-height: 28px;
   word-wrap: break-word;
-}
-
-.bold {
-  font-weight: 500;
 }

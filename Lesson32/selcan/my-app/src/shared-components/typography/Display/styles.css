@@ -1,13 +1,8 @@
-h2 {
-  
+.dis{
   color:#313E51;
   font-size: 144px;
   font-family: Rubik;
   font-weight: 500;
   line-height: 144px;
-  word-wrap: break-word
-}
-
-.bold {
-  font-weight: 500;
+  word-wrap: break-word;
 }

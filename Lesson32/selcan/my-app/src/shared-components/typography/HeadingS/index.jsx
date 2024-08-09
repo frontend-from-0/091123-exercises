@@ -1,8 +1,8 @@
 import './styles.css';
 
-export const HeadingS = ({title, bold}) => {
+export const HeadingS = ({title, headS}) => {
 
   return (
-    <h4 className={bold ? 'bold' : ''}>{title}</h4>
+    <h4 className={headS ? 'headS' : ''}>{title}</h4>
   );
 }
