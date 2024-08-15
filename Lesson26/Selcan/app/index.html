@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Image Gallery</title>
-  <link rel="stylesheet" type="text/css" href="./styles.css">
-</head>
-<body>
-  <h1>Image Gallery</h1>
-  <button id="fetch-button" class="button">Fetch Images</button>
-  <div id="image-container">
-    <label for="image-count">Kaç adet resim getirilsin?</label>
-    <input type="text" id="image-count"  name="image-count" min="1" max="50" value="Resim adeti">
-    <button id="clear-button">Ekrani temizle</button>
-    <span id="count-value"></span>
-    
-    <ul id="images-list"></ul>
-  </div>
+  <head>
+    <title>Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Image Gallery</h1>
+    <button id="fetch-button" class="button">Fetch Images</button>
+    <div id="image-container">
+      <label for="image-count">Kaç adet resim getirilsin?</label>
+      <input
+        type="text"
+        id="image-count"
+        name="image-count"
+        min="1"
+        max="50"
+        value="Resim adeti"
+      />
+      <button id="clear-button">Ekrani temizle</button>
+      <span id="count-value"></span>
+      <ul id="images-list"></ul>
+    </div>
 
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
