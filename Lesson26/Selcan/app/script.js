@@ -34,5 +34,6 @@ button.addEventListener('click', function () {
 });
 
 clearButton.addEventListener("click", function () {
+  console.log("Clear button clicked!");
   document.getElementById("image-container").innerHTML = "";
 });
