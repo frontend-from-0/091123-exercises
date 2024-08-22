@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to fetch pictures from Unsplash API
   function showPictures(count) {
-      fetch(`https://api.unsplash.com/photos/randm?count=${count}&client_id=${API_KEY}`)
+      fetch(`https://api.unsplash.com/photos/random?count=${count}&client_id=${API_KEY}`)
       .then(response => response.json())
       .then(data => {
         // TODO: Add error handling (display error message to the user if an error occurs)
