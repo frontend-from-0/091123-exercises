@@ -5,6 +5,10 @@ import { Exercise4 } from './Exercise4';
 import { Exercise5 } from './Exercise5';
 import { Exercise6 } from './Exercise6';
 import { Exercise7 } from './Exercise7';
+import { ToDoList } from './Exercise8';
+import { ColorChanger } from './Exercise9';
+import { Exercise10 } from './Exercise10';
+
 
 export const App = () => {
   return (
@@ -16,6 +20,9 @@ export const App = () => {
       <Exercise5 />
       <Exercise6 />
       <Exercise7 />
+      <ToDoList />
+      <ColorChanger />
+      <Exercise10 />
     </div>
   );
 };

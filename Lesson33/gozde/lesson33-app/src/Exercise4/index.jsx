@@ -1,5 +1,4 @@
 
-import React from "react";
 
 export const Exercise4 = () => {
     const items = ["Item 1", "Item 2", "Item 3"];
