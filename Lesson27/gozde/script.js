@@ -30,7 +30,6 @@ function getPosts() {
 				paragraph.innerText = post.body;
 
 				const updateButton = document.createElement('a');
-				updateButton.setAttribute('id', 'update-button');
 				updateButton.setAttribute('class', 'button button--success');
 				updateButton.innerText = 'Update post';
                 updateButton.href = `./update/update-post.html?postId=${post.id}`;
@@ -66,33 +65,6 @@ function getPostById(postId) {
 	.catch((error) => console.error('Error:', error));
 }
 // TODO: move this to the script file attached to the create-post.html page
-function createPost() {
-	const postTitleText = document.getElementById('title-input').value;
-    const postBodyText = document.getElementById('body-input').value;
-	const createButton = document.createElement('a');
-	createButton.setAttribute('id', 'create-button');
-    createButton.innerText = 'Create post';
-
-    fetch(URL, {
-        method: 'POST',
-        body: JSON.stringify({
-            title: postTitleText,
-            body: postBodyText
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-    .then((response) => response.json())
-    .then((json) => {
-        console.log('Post created:', json);
-        alert('Post created successfully');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('An error occurred while creating the post');
-    });
-}
 
 
 function deletePost(postId) {

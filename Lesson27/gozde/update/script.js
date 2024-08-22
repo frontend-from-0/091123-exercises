@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('title-input').value = post.title;
     document.getElementById('body-input').value = post.body;
     
-}
+  })
 })
 
 //  TODO: 1. Fetch post data for the post with given postId
