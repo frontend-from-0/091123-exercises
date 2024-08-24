@@ -41,6 +41,7 @@ function getPosts() {
 				deleteButton.addEventListener('click', () => deletePost(post.id));
 
 				const listItem = document.createElement('li');
+				listItem.classList.add('post');
 				listItem.append(title);
 				listItem.append(paragraph);
 				listItem.append(updateButton);
