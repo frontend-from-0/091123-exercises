@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+}
+
+.app {
+  display: flex;
+  flex-direction:column;
+  max-width: 500px;
+  margin:  100px auto;
+  gap: 20px;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+li {
+padding: 3px;
+}
+
+
+.mouse-area {
+  width: "100%";
+   height: "100vh";
+    position: "relative";
+}
+
+.coordinates {
+  margin-Top: "30px";
+}
