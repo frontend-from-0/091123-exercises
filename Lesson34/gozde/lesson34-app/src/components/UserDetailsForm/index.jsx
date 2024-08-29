@@ -1,18 +1,30 @@
-import { useState } from "react"
+
+import { useState, useContext, useEffect } from "react";
 import './styles.css';
+import { UserContext } from '../UserContext'; 
 
-export const UserDetailsForm = ({incomingUsername}) => {
-  const [username, setUsername] = useState(incomingUsername);
+export const UserDetailsForm = ({ incomingUsername }) => {
+  const [username, setUsername] = useState('');
+  const { dispatch } = useContext(UserContext);
 
-  function handleSubmit (e) {
+  useEffect(() => {
+    setUsername(incomingUsername); 
+  }, [incomingUsername]);
+
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('New user name is: ', username);
-  };
+    dispatch({ type: 'UPDATE_USERNAME', payload: username });  
+  }
 
   return (
     <form className='user-details-form' onSubmit={handleSubmit}>
-      <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} value={username} />
+      <input
+        type="text"
+        name="username"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
+      />
       <button type="submit">Save</button>
     </form>
-  )
-}
+  );
+};
