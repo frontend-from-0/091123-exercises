@@ -2,9 +2,15 @@ import { useState } from "react";
 
 export const Exercise4 = () => {
   const [items] = useState(["Apple", "Pear", "Banana", "Watermelon"]);
+  const [message, setMessage] = useState("");
 
   const handleClick = (item) => {
-    alert(`Clicked Item: ${item}`);
+    if (message.length > 0) {
+      setMessage("");
+    } else {
+      setMessage("Clicked!");
+      console.log("clicked");
+    }
   };
 
   return (
@@ -16,6 +22,7 @@ export const Exercise4 = () => {
           </li>
         ))}
       </ul>
+      <p> {message}</p>
     </div>
   );
 };
