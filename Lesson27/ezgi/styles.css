@@ -9,7 +9,7 @@ body {
   background-color: #f2f2f2;
 }
 
-header{
+header {
   margin-top: 50px;
 }
 
@@ -25,7 +25,7 @@ header{
 h1 {
   text-align: center;
   color: #333;
-  margin:0;
+  margin: 0;
 }
 
 ul {
@@ -62,7 +62,8 @@ ul {
   font-size: 16px;
   cursor: pointer;
   min-width: 48px;
-  margin:10px;
+  margin: 10px;
+  max-width: 150px;
 }
 
 .button--success {
@@ -81,11 +82,41 @@ ul {
 .button--danger:hover {
   background-color: #79000cf4;
 }
- 
-a{
+
+a {
   text-decoration: none;
 }
 
-.list-item{
+.list-item {
   margin-bottom: 30px;
+}
+
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-button {
+  margin: 15px auto;
+
+}
+
+.err-msg {
+  text-align: center;
+  font-size: medium;
+}
+
+.button--main{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #000000;
+  background-color: #dcc40d;
 }
