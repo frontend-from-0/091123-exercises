@@ -25,9 +25,10 @@ function getPosts() {
 			response.map((post) => {
 				const title = document.createElement('h2');
 				title.innerText = post.title;
-
+				title.setAttribute('class', 'post-title');
 				const paragraph = document.createElement('p');
 				paragraph.innerText = post.body;
+				paragraph.setAttribute('class', 'post-body');
 
 				const updateButton = document.createElement('a');
 				updateButton.setAttribute('id', 'update-button');
@@ -35,13 +36,14 @@ function getPosts() {
 				updateButton.innerText = 'Update post';
 				updateButton.href = `http://127.0.0.1:5500/Lesson27/ezgi/update/update-post.html?postId=${post.id}`;
 
-		        const deleteButton =document.createElement('button');
-				deleteButton.setAttribute('id' , 'delete-button');
-				deleteButton.setAttribute('class','button button--danger' );
-				deleteButton.innerText='Delete post';
-				deleteButton.addEventListener('click', ()=> deletePost(post.id));
+				const deleteButton = document.createElement('button');
+				deleteButton.setAttribute('id', 'delete-button');
+				deleteButton.setAttribute('class', 'button button--danger');
+				deleteButton.innerText = 'Delete post';
+				deleteButton.addEventListener('click', () => deletePost(post.id));
 
 				const listItem = document.createElement('li');
+				listItem.setAttribute('class', 'list-item');
 				listItem.setAttribute('data-id', post.id); //why we use the data-id? I researched explanation of data attributes but I didn't get the reason to use 
 				listItem.append(title);
 				listItem.append(paragraph);
@@ -53,26 +55,21 @@ function getPosts() {
 		});
 }
 
-function getPostById() {}
-
-// TODO: move this to the script file attached to the create-post.html page
-function createPost() {}
-
 
 function deletePost(postId) {
-	fetch(`${URL}/${postId}` , {
+	fetch(`${URL}/${postId}`, {
 		method: 'DELETE'
 	})
-	.then(response => {
-		if(response.ok){
-			const deletePost=document.querySelector(`li[data-id="${postId}"]`);
-			deletePost.remove();
-		} else{
-            console.log("Failed to delete the post with id ${postId} ");
-		}
-	}) .catch(error=> {
-		console.error(error);
-	});
+		.then(response => {
+			if (response.ok) {
+				const deletePost = document.querySelector(`li[data-id="${postId}"]`);
+				deletePost.remove();
+			} else {
+				console.log("Failed to delete the post with id ${postId} ");
+			}
+		}).catch(error => {
+			console.error(error);
+		});
 
 }
 

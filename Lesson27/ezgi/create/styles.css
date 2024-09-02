@@ -17,7 +17,7 @@ header{
   max-width: 800px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 20px;
   /* border: 1PX solid black; */
 }
@@ -25,14 +25,11 @@ header{
 h1 {
   text-align: center;
   color: #333;
-  margin:0;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  max-width: 500px;
-  margin-left: 50px;
 }
 
 .post {
@@ -61,8 +58,7 @@ ul {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  min-width: 48px;
-  margin:10px;
+  /* margin-bottom: 20px; */
 }
 
 .button--success {
@@ -84,8 +80,4 @@ ul {
  
 a{
   text-decoration: none;
-}
-
-.list-item{
-  margin-bottom: 30px;
 }

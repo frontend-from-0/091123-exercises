@@ -10,7 +10,7 @@ body {
 }
 
 header{
-  margin-top: 50px;
+  margin: 50px 0;
 }
 
 .container {
@@ -28,14 +28,7 @@ h1 {
   margin:0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  max-width: 500px;
-  margin-left: 50px;
-}
-
-.post {
+/* .post {
   background-color: #fff;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -52,7 +45,7 @@ ul {
 .post-body {
   color: #666;
   margin: 0;
-}
+} */
 
 .button {
   padding: 15px 30px;

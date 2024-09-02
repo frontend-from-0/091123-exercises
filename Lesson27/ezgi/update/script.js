@@ -4,7 +4,7 @@ const postId = urlParams.get('postId');
 
 document.addEventListener('DOMContentLoaded' , () => {
 fetch('https://jsonplaceholder.typicode.com/posts/' + postId) 
-.then(Response=> Response.json())
+.then(response=> response.json())
 .then(post => {
     document.getElementById('title').value= post.title;
     console.log ('Original Title :' , post.title);
@@ -38,7 +38,7 @@ form.addEventListener("submit", function(event) {
     .then(response => response.json())
         .then(responsjson => {
             const successError = document.getElementById('successError');
-            successError.textContent='The post updated successfully !';
+            successError.textContent='The post updated successfully!';
             console.log(responsjson);
             
         })
