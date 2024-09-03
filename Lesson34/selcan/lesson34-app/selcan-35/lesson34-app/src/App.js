@@ -39,6 +39,5 @@ export const App = () => {
 				</div>
 			</div>
 		</UserProvider>
-
 	);
 };
