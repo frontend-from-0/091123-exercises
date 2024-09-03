@@ -1,6 +1,9 @@
 import { useState } from "react"
+
 import './styles.css';
-// todo:update component.
+
+// TODO: Update component so that it's possible to change user name and save new user name in the UserContext
+
 export const UserDetailsForm = () => {
   const [username, setUsername] = useState('');
 
