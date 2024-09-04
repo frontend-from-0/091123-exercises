@@ -6,7 +6,7 @@ export const Exercise4 = () => {
 
   const handleClick = (item) => {
     if (message.length > 0) {
-      setMessage("");
+      setMessage(`Clicked on ${item}!`);
     } else {
       setMessage("Clicked!");
       console.log("clicked");
@@ -16,8 +16,8 @@ export const Exercise4 = () => {
   return (
     <div>
       <ul>
-        {items.map((item, index) => (
-          <li key={index} onClick={() => handleClick(item)}>
+        {items.map((item) => (
+          <li key={item} onClick={() => handleClick(item)}>
             {item}
           </li>
         ))}
