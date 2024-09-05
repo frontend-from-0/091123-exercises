@@ -23,7 +23,7 @@ export const LogIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: 'LOGIN', payload: { username } });
+    dispatch({ type: UserActionTypes.login, payload: { username, isLoggedInUser: true }});
   };
 
   return (
