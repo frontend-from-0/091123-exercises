@@ -34,7 +34,7 @@ function getPosts() {
 				updateButton.setAttribute('id', 'update-button');
 				updateButton.setAttribute('class', 'button button--success');
 				updateButton.innerText = 'Update post';
-				updateButton.href = `http://127.0.0.1:5500/Lesson27/ezgi/update/update-post.html?postId=${post.id}`;
+				updateButton.href = `http://127.0.0.1:5500/ezgi/update/update-post.html?postId=${post.id}`;
 
 				const deleteButton = document.createElement('button');
 				deleteButton.setAttribute('id', 'delete-button');
