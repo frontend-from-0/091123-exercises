@@ -27,7 +27,7 @@ export const UserActionTypes = {
 
 function userReducer (state, action){
 switch(action.type) {
-    case 'login':
+    case UserActionTypes.login:
         return action.payload;
         case 'logout':
             return { isLoggedInUser: false };
