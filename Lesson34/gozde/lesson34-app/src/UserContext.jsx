@@ -31,7 +31,7 @@ switch(action.type) {
         return action.payload;
         case 'logout':
             return { isLoggedInUser: false };
-            case 'updateUserInfo':
+            case UserActionTypes.update:
                 return { ...state, ...action.payload };
                 default: throw Error('Action type ${action.type} is not supported');
 }
