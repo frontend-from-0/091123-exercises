@@ -29,7 +29,7 @@ function userReducer (state, action){
 switch(action.type) {
     case UserActionTypes.login:
         return action.payload;
-        case 'logout':
+        case UserActionTypes.logout:
             return { isLoggedInUser: false };
             case UserActionTypes.update:
                 return { ...state, ...action.payload };
