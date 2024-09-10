@@ -7,7 +7,7 @@ import {
 } from "../..//userContext.jsx";
 
 export const Navbar = () => {
-  const User = useContext(UserContext);
+  const user = useContext(UserContext);
   const dispatch = useContext(UserDispatchContext);
 
   function handleSignOutClick() {
@@ -28,8 +28,8 @@ export const Navbar = () => {
     <nav className="navigation">
       <ul className="navigation-list">
         <li>Home</li>
-        {User.isLoggedInUser ? <li>Account</li> : <></>}
-        {User.isLoggedInUser ? (
+        {user.isLoggedInUser ? <li>Account</li> : <></>}
+        {user.isLoggedInUser ? (
           <li onClick={handleSignOutClick}>Sign out</li>
         ) : (
           <li oncick={handleSignInClick}>Sign in</li>

@@ -6,6 +6,8 @@ import { todoData } from './data';
 import { UserProvider } from './userContext';
 import { Account } from './components/Account';
 import Login from './components/Login';
+import { useContext } from 'react';
+import { UserContext } from './userContext';
 import './App.css';
 
 // TODO: Create a new Component that contains log in form, so that user can type username and password and click submit button to log in.
@@ -18,13 +20,20 @@ export const App = () => {
 	const loggedOutUser = {
 		isLoggedInUser: false
 	};
+	const user = useContext(UserContext);
 
 	return (
+
+
+
 
 		<UserProvider initialState={loggedOutUser}>
 			<div className='container'>
 				<Navbar />
-				<Login />
+				<div>
+					{user?.isLoggedInUser ? <Account /> : <Login />}
+				</div>
+
 				<Account />
 				<div className='app'>
 					<List todos={todos} updateTodos={setTodos} />
