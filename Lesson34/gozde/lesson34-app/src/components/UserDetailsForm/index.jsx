@@ -13,7 +13,7 @@ export const UserDetailsForm = ({ incomingUsername }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch({ type: 'UPDATE_USERNAME', payload: username });  
+    dispatch({ type: UserActionTypes.update, payload: username });  
   }
 
   return (
