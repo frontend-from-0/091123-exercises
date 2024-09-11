@@ -34,7 +34,6 @@ export const App = () => {
 					{user?.isLoggedInUser ? <Account /> : <Login />}
 				</>
 
-				<Account />
 				<div className='app'>
 					<List todos={todos} updateTodos={setTodos} />
 
