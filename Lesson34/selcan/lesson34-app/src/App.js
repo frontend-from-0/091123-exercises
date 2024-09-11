@@ -32,7 +32,7 @@ export const App = () => {
 				<Navbar />
 				<div>
 					{user?.isLoggedInUser ? <Account /> : <Login />}
-				</div>
+				</>
 
 				<Account />
 				<div className='app'>
