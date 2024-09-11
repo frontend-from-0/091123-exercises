@@ -30,7 +30,7 @@ export const App = () => {
 		<UserProvider initialState={loggedOutUser}>
 			<div className='container'>
 				<Navbar />
-				<div>
+				<>
 					{user?.isLoggedInUser ? <Account /> : <Login />}
 				</>
 
