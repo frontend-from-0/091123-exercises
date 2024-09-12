@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+ 
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--main-white);
+}
+
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+}
+
+/* navbar stars here */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--main-red);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.logo {
+    width: 55px;
+   height: 55px;
+    border-radius: 10px;
+    margin-left: 6px;
+    padding-top: 8px;
+    transition: transform 0.3s ease;
+    transform-origin: left;
+   
+}
+
+.logo:hover {
+    transform: scaleX(1.4);
+}
+
+
+.nav-list {
+    display: flex;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 15px;
+    margin-right: 2rem;
+}
+
+.nav-list a {
+    display: block;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+/* navbar ends */
+
+/* welcome section starts */
+
+h1 {
+    display: block;
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.welcome-section > p {
+    font-size: 2rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--main-red);
+}
+
+/* welcome section ends */
+
+.project-section-header {
+   max-width: 640px;
+   margin: 0 auto 6rem auto;
+    text-align: center;
+   border-bottom: 0.2rem solid var(--main-white);
+}
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    display: block;
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* project images starts here */
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-gap: 20px; 
+}
+
+.project {
+    overflow: hidden; 
+}
+
+.project-image {
+    width: 100%; 
+    height: auto; 
+}
+
+.project-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: var(--main-blue);
+}
+
+.project-title {
+    background-color: var(--main-gray);
+    padding: 2rem 0.5rem;
+    display: block;
+    
+}
+
+
+.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+}
+
+.image2 {
+    height: 65%;
+}
+
+
+
+.code {
+    color: var(--main-red);
+    
+   
+    font-size: 2rem;
+}
+
+/* contacts */
+
+.contact-section {
+    background-color: var(--main-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+}
+
+
+.contact-section-header {
+    text-align: center;
+}
+
+.contact-section-header > h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 85px;
+    text-align: center;
+}
+
+
+.contact-section-header > p {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 100%;
+   
+}
+
+.btn {
+    padding: 1rem 1rem;
+}
+
+
+.contact-details {
+    font-size: 2rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 1;
+}
+
+.contact-details:hover {
+    transform: scale(1.1) translateY(10px); 
+    opacity: 0.98;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background-color: var(--main-gray);
+    border-top: 1px solid var(--main-red);
+    font-weight: 300;
+    border-top-width: 2px ;
+    font-size: 22px;
+}
+
+
+@media all and (max-width: 620px)
+{
+    .contact-section {
+        background-color: var(--main-gray);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80vh;
+    }
+
+    footer > p {
+        font-size: 14px;
+        margin: 10px 5px;
+        
+    }
+    footer {
+        border-top: 1px var(--main-red);
+        margin-top: 1px; 
+      }
+}
+
+
+@media all and (max-width: 390px) {
+    .logo {
+        display: none;
+      }
+
+
+      footer {
+          border-top: 1px var(--main-red);
+          margin-top: 1px; 
+          padding-top: 3rem;
+        }
+      footer a {
+          color: var(--main-white);
+      }
+      footer p {
+          color: var(--main-white);
+          padding: 3px;
+      }
+      .contact-section {
+        margin-bottom: 1px; 
+        padding-bottom: 10rem;
+        
+        }
+
+        .contact-section-header > h2 {
+            margin-top: 9rem;
+           }
+}
+
+
+
+
+@media (min-width: 390px) and (max-width: 768px){
+    .logo {
+      display: none;
+    }
+
+
+    footer {
+        border-top: 1px var(--main-red);
+        margin-top: 1px; 
+        padding-top: 3rem;
+      }
+    footer a {
+        color: var(--main-white);
+    }
+    footer p {
+        color: var(--main-white);
+    }
+    .contact-section {
+        margin-bottom: 1px; 
+        padding-bottom: 10rem;
+      }
+      .contact-section-header > h2 {
+        margin-top: 5rem;
+       }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    footer {
+        border-top: 1px var(--main-red); 
+        margin-top: 1px; 
+        padding-top: 3rem;
+      }
+      
+      footer p {
+        margin: 3px;
+      }
+
+      .contact-section {
+        margin-bottom: 1px; 
+        padding-bottom: 6rem;
+      }
+      .contact-section-header > h2 {
+        margin-top: 9rem;
+       }
+    }
+
+    @media (min-width: 620px) and (max-width: 920px) {
+        footer {
+            border-top: 1px var(--main-red); 
+            margin-top: 1px; 
+            padding-top: 3rem;
+          }
+
+          .nav {
+            display: flex;
+            justify-content: center;
+        }
+
+          .contact-section-header > h2 {
+           margin-top: 9rem;
+          }
+          
+          .contact-section {
+            margin-bottom: 1px; 
+            padding-bottom: 10rem;
+            }
+    }
