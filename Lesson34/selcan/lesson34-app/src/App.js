@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { PerformanceState } from './components/PerformanceState';
 import { useState } from 'react';
 import { todoData } from './data';
+
 import { UserProvider } from './userContext';
 import { Account } from './components/Account';
 import Login from './components/Login';
@@ -46,5 +47,6 @@ export const App = () => {
 		</UserProvider>
 	);
 };
+
 
 
