@@ -4,9 +4,12 @@ import { PerformanceState } from "./components/PerformanceState";
 import { useState } from "react";
 import { todoData } from "./data";
 import "./App.css";
-import { createContext } from "react";
+import { UserProvider } from "./UserContext";
+import { Account } from "./components/Account";
 
-export const UserContext = createContext();
+// todo : create a new Component that contains log form in form , so that user can type username adn password and click submit
+// if user logged in, show Account component.
+// if user is logged out, show log in componet.
 
 export const App = () => {
   const [todos, setTodos] = useState(todoData);
@@ -20,9 +23,10 @@ export const App = () => {
   };
 
   return (
-    <UserContext.Provider value={loggedInUser}>
+    <UserProvider initialState={loggedOutUser}>
       <div className="container">
         <Navbar />
+        <Account />
         <div className="app">
           <List todos={todos} updateTodos={setTodos} />
 
@@ -32,6 +36,6 @@ export const App = () => {
           />
         </div>
       </div>
-    </UserContext.Provider>
+    </UserProvider>
   );
 };
