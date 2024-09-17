@@ -35,7 +35,7 @@ export const UserProvider = ({ children, initialState }) => {
         return action.payload;
       case UserActionTypes.logout:
         console.log("Logging out, action:", action);
-        return { isLoggedInUsers: false };
+        return { isLoggedInUser: false };
       case UserActionTypes.update:
         return { ...state, ...action.payload };
       default:
