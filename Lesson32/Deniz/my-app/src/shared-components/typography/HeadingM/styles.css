@@ -1,0 +1,9 @@
+.title-medium {
+    color: var(--Dark-Navy, #313E51);
+    /* Heading M */
+    font-family: Rubik;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 43.2px */
+}
