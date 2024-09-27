@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .accordion {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .accordion-item {
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background: #f5f5f5;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header.active {
+            background: #e5e5e5;
+        }
+        .accordion-body {
+            padding: 15px;
+            display: none;
+        }
+        .accordion-body.open {
+            display: block;
+        }
+        .fa-angle-up {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-header.active .fa-angle-up {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header active">Accordion Item # 1 
+            <button class="accordion-button" type="button">
+                <i class="fa-solid fa-angle-up"></i>
+            </button>
+        </h2>  
+        <div class="accordion-body open">
+            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <span class="red">.accordion-body</span>, though the transition does limit overflow.
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">Accordion Item # 2 
+            <button class="accordion-button" type="button">
+                <i class="fa-solid fa-angle-up"></i>
+            </button>
+        </h2>  
+        <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is forbidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <span class="red">.accordion-body</span>, though the transition does limit overflow.
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">Accordion Item # 3 
+            <button class="accordion-button" type="button">
+                <i class="fa-solid fa-angle-up"></i>
+            </button>
+        </h2>  
+        <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is forbidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <span class="red">.accordion-body</span>, though the transition does limit overflow.
+        </div>
+    </div>
+</div> 
+<script>
+    window.addEventListener("load", function() {
+       const headers = document.querySelectorAll(".accordion-header");
+       const bodies = document.querySelectorAll(".accordion-body");
+       
+       
+       headers.forEach((header, index) => {
+           header.addEventListener("click", function() {
+               const body = bodies[index];
+               const isOpen = body.classList.contains("open");
+               
+               // Close all bodies
+               bodies.forEach(body => body.classList.remove("open"));
+               headers.forEach(header => header.classList.remove("active"));
+               
+
+               
+               // Open the clicked one if it was closed
+               if (!isOpen) {
+                   body.classList.add("open");
+                   header.classList.add("active");
+               }
+           });
+       });
+    });
+</script>  
+</body>
+</html>
