@@ -7,7 +7,7 @@ import {
 } from "../../UserContext.jsx";
 
 export const Navbar = () => {
-  const User = useContext(UserContext);
+  const user = useContext(UserContext);
   const dispatch = useContext(UserDispatchContext);
   console.log("User Data:", User);
 
