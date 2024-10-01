@@ -9,7 +9,6 @@ import {
 export const Navbar = () => {
   const user = useContext(UserContext);
   const dispatch = useContext(UserDispatchContext);
-  console.log("User Data:", User);
 
   function handleSignOutClick() {
     dispatch({ type: UserActionTypes.logout });
