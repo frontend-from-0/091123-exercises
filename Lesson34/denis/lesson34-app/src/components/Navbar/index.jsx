@@ -26,7 +26,7 @@ export const Navbar = () => {
       <ul className="navigation-list">
         <li>Home</li>
         {user.isLoggedInUser ? <li>Account</li> : <></>}
-        {User.isLoggedInUser ? (
+        {user.isLoggedInUser ? (
           <li onClick={handleSignOutClick}>Sign out</li>
         ) : (
           <li onClick={handleSignInClick}>Sign in</li>
