@@ -9,7 +9,7 @@ form.addEventListener("submit", function (e) {
   const emailInput = document.getElementById("email");
   const emailError = document.getElementById("emailError");
   const formContainer = document.querySelector("box");
-  const hidenBox = document.getElementsByClassName("hide-box");
+  const hidenBox = document.querySelector(".hide-box");
   const emailDisplay = document.getElementById("emailDisplay");
 
   emailError.textContent = "";
@@ -25,11 +25,11 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-document
-  .getElementsByClassName("submit-btn")
-  .addEventListener("click", function () {
-    const formContainer = document.querySelector("box");
-    const hidenBox = document.getElementsByClassName("hide-box");
-    hidenBox.classList.add("hide-box");
-    formContainer.classList.remove("hide-box");
-  });
+// document
+//   .getElementsByClassName("submit-btn")
+//   .addEventListener("click", function () {
+//     const formContainer = document.querySelector("box");
+//     const hidenBox = document.getElementsByClassId("#hide-box");
+//     hidenBox.classList.add("hide-box");
+//     formContainer.classList.remove("hide-box");
+//   });

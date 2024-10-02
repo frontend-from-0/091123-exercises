@@ -75,7 +75,7 @@
           </li>
         </ul>
         <form id="form" novalidate>
-          <label id="e-title" for="email"><b>Email address</b></label>
+          <label id="e-title" for="email">Email address</label>
           <div id="emailError" class="error"></div>
           <input
             type="email"
@@ -83,9 +83,10 @@
             placeholder="email@company.com"
             required
           />
+          <button class="submit-btn" type="submit">
+            Subscribe to monthly newsletter
+          </button>
         </form>
-        <button class="submit-btn" type="submit"> Subscribe to monthly newsletter</a>
-        </button>
       </div>
       <div class="right-container">
         <img
@@ -97,8 +98,9 @@
       </div>
     </main>
 
-    <div class="hide-box hide">
-      <svg id="icon-hide"
+    <div id="hide-box" class="hide-box hide">
+      <svg
+        id="icon-hide"
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
@@ -113,7 +115,7 @@
       <p id="hide-p">
         A confirmation email has been sent to
         <a id="emailDisplay" href="mailto:ash@loremcompany.com"
-          ><b>ash@loremcompany.com</b></a
+          >ash@loremcompany.com</a
         >. Please open it and click the button inside to confirm your
         subscription.
       </p>
@@ -123,5 +125,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-
-<!-- Yazı formatını oto düzeltsin ben uğraşmıyım diye bir extension eklemiştim.Bu yüzden svg kodları biraz uzun gözüküyor. -->
