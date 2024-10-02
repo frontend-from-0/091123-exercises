@@ -1,82 +1,66 @@
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.carousel {
-    width: 800px;
-    height: 500px;
-    position: relative;
-    margin: 0 auto;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffffff;
 }
 
-.carousel-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-
+.accordion {
+  max-width: 900px;
 }
 
-.carousel img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0,5s ease-in-out;
-    border-radius: 15px;
+.container {
+  position: relative;
+  border: 3px solid #362a35;
+  border-radius: 10px;
+  margin: 20px;
 }
 
-.carousel img.active {
-    opacity: 1;
+.accordion-header:hover {
+  background: #b573b5;
 }
 
-.carousel-navigation {
-    position: absolute;
-    top: 50%;
-    transform: translateY(50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 1;
+.accordion-header {
+  position: relative;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #9b6298, #61045f);
 }
 
-.carousel-btn {
-    padding: 5px 20px;
-    background-color: #f9e5c3;
-    border: none;
-    cursor: pointer;
-    border-radius: 7px;
-    color: #4b4a4a;
-    font-size: 15px;
-    
-}
-/* prev-next butonları şeffaf olmadı, yapamadım*/
-
-
-.carousel-indicaors {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.accordion-header::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
 }
 
-.indicator {
-    width: 40px;
-    height: 10px;
-    background-color: #efbbcf;
-    border-radius: 50px;
-    margin: 0 50px;
+.accordion-body {
+  position: relative;
+  background-color: #f4ecec;
+  color: rgb(47, 44, 44);
+  overflow: auto;
+  height: 0;
+  transition: 0.5s;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
 }
-/* indicatorları nasıl resimlerin üzerine koyuyorduk yapamadım. */
 
-.indicator.active {
-    background-color: #555;
+.container.active .accordion-body {
+  height: 140px;
+  padding: 10px;
+}
+.container.active .accordion-header::before {
+  content: "-";
 }

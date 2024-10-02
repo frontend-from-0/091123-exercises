@@ -1,35 +1,54 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>My First Carousel</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-</head>
-
-<body>
-    <div class="carousel">
-        <div class="carousel-container">
-            <img class="active"
-                src="https://images.unsplash.com/photo-1717911964995-d4a665ecfa82?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Image 1 " />
-            <img class="active"
-                src="https://images.unsplash.com/photo-1516496636080-14fb876e029d?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Image 2 " />
-            <img class="active"
-                src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Image 3 " />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="container">
+        <h2 class="accordion-header">Accordion Item #1</h2>
+        <div class="accordion-body">
+          <strong>This is the first item's accordion body.</strong> It is shown
+          by default, until the collapse plugin adds the appropriate classes
+          that we use to style each element. These classes control the overall
+          appearance, as well as the showing and hiding via CSS transitions. You
+          can modify any of this with custom CSS or overriding our default
+          variables. It's also worth noting that just about any HTML can go
+          within the <code>.accordion-body</code>, though the transition does
+          limit overflow.
         </div>
-        <div class="carousel-navigation">
-            <button class="carousel-btn prev-btn" id="prev-btn">←</button>
-            <button class="carousel-btn next-btn" id="next-btn">→</button>
+      </div>
+      <div class="container">
+        <h2 class="accordion-header">Accordion Item #2</h2>
+        <div class="accordion-body">
+          <strong>This is the second item's accordion body.</strong> It is shown
+          by default, until the collapse plugin adds the appropriate classes
+          that we use to style each element. These classes control the overall
+          appearance, as well as the showing and hiding via CSS transitions. You
+          can modify any of this with custom CSS or overriding our default
+          variables. It's also worth noting that just about any HTML can go
+          within the <code>.accordion-body</code>, though the transition does
+          limit overflow.
         </div>
-        <div class="carousel-indicators">
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
+      </div>
+      <div class="container">
+        <h2 class="accordion-header">Accordion Item #3</h2>
+        <div class="accordion-body">
+          <strong>This is the third item's accordion body.</strong> It is shown
+          by default, until the collapse plugin adds the appropriate classes
+          that we use to style each element. These classes control the overall
+          appearance, as well as the showing and hiding via CSS transitions. You
+          can modify any of this with custom CSS or overriding our default
+          variables. It's also worth noting that just about any HTML can go
+          within the <code>.accordion-body</code>, though the transition does
+          limit overflow.
         </div>
+      </div>
     </div>
-    <script src="script.js"></script>
-</body>
 
+    <script src="script.js"></script>
+  </body>
 </html>
