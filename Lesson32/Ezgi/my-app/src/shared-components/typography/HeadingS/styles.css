@@ -1,0 +1,16 @@
+h4 {
+  color: var(--Dark-Navy, #313E51);
+  /* Heading S */
+  font-family: Rubik;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 28px */
+}
+
+
+.bold {
+  font-weight: 500;
+}
+
+
