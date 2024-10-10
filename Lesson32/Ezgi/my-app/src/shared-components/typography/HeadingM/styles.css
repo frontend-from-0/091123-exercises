@@ -1,0 +1,13 @@
+h3 {
+  font-family: Rubik;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  color: var(--dark-navy);
+}
+
+
+.bold {
+  font-weight: 500;
+}
