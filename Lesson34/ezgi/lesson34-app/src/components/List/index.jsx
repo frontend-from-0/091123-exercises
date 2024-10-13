@@ -11,8 +11,8 @@ export const List = ({todos,updateTodos}) => {
 	}
 
 	function deleteTodo (id) {
-		const newTodo = todos.filter((todo)=> todo.id != id);
-		updateTodos(newTodo);
+		const updatedTodos = todos.filter((todo)=> todo.id != id);
+		updateTodos(updatedTodos);
 	}
 
 
