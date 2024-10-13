@@ -10,8 +10,8 @@ export const Exercise8 = () => {
         ]
     )
 
-    const deletekHandler = (removeToIndex) => {
-       const newList =listItems.filter((item,index) => index !== removeToIndex) 
+    const deleteHandler = (indexToRemove) => {
+       const newList =listItems.filter((item,index) => index !== indexToRemove) 
        setItems(newList);
     }
 
@@ -21,7 +21,7 @@ export const Exercise8 = () => {
             {listItems.map((item, index) => (
                 <li key={index}>
                     {item} 
-                    <button onClick={() => deletekHandler(index)}>Delete</button>
+                    <button onClick={() => deleteHandler(index)}>Delete</button>
                 </li>
 
             ))}
