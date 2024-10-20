@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4c5c8;
+  margin-top: 50px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4e4e4d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #2c2727;
+  margin: 0 0 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.post-body {
+  color: #666;
+  margin: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.button--success {
+  background-color: #4caf50;
+}
+
+.button--success:hover {
+  background-color: #45a049;
+}
+
+.button--danger {
+  background-color: #7a0916;
+}
+
+.button--danger:hover {
+  background-color: #79000cf4;
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+}
+
+#create-post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+label {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold;
+}
+#create-title-post,
+#create-body-post {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* #create-body-post {
+  padding: 10px;
+  border: none;
+  border-radius: 4px; 
+}*/
+
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: #262323;
+}
+
+p {
+  font-size: 1em;
+  margin: 0 0 10px;
+  line-height: 1.5;
+  color: #343030;
+}
+
+#create-btn {
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  background-color: #45a049;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* bazı elementler için css yapamdım çünkü sayfaya ulaşamdığım için göremedim.*/
