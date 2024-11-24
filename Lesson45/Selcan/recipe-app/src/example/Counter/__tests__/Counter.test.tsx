@@ -41,6 +41,7 @@ describe('<Counter /> component', () => {
 
     const countValue = screen.getByTestId('count-value');
     const incrementButton = screen.getByTestId('increment-button');
+    
   
     expect(countValue).toHaveTextContent('0');
     await userEvent.click(incrementButton);
@@ -51,8 +52,20 @@ describe('<Counter /> component', () => {
   });
 
   it('should decrement count correctly when clicking on the - button', async () => {
+    render(<Counter />);
+
+    const countValue = screen.getByTestId('count-value');
+    const decrementButton = screen.getByTestId('decrement-button');
+  
+    expect(countValue).toHaveTextContent('1');
+    await userEvent.click(decrementButton);
+    expect(countValue).toHaveTextContent('0');
+
+    await userEvent.dblClick(decrementButton);
+    expect(countValue).toHaveTextContent('-1')
+      });
   });
-});
+
 
 describe('counterReducer', () => {
   it('should increment the count by 1 when the action type is INCREMENT', () => {
