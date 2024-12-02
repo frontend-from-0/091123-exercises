@@ -1,0 +1,9 @@
+.heading-m {
+  color: var(--Dark-Navy, #313e51);
+  /* Heading M */
+  font-family: Rubik;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 43.2px */
+}
