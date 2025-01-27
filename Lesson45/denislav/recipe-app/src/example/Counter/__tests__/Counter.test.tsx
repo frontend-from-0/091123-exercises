@@ -1,63 +1,91 @@
-import {render, screen} from '@testing-library/react';
-import {userEvent} from '@testing-library/user-event';
-import '@testing-library/jest-dom';
-import { Counter } from '..';
+import { render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event";
+import "@testing-library/jest-dom";
+import { Counter } from "..";
 
-describe('<Counter /> component', () => {
-  it('should render correctly', () => {
+describe("<Counter /> component", () => {
+  it("should render correctly", () => {
     render(<Counter />);
 
-    const countLabel = screen.getByTestId('count-label');
-    const countValue = screen.getByTestId('count-value');
-    const incrementButton = screen.getByTestId('increment-button');
-    const decrementButton = screen.getByTestId('decrement-button');
-  
+    const countLabel = screen.getByTestId("count-label");
+    const countValue = screen.getByTestId("count-value");
+    const incrementButton = screen.getByTestId("increment-button");
+    const decrementButton = screen.getByTestId("decrement-button");
+
     expect(countLabel).toBeInTheDocument();
     expect(countValue).toBeInTheDocument();
-    expect(countValue).toHaveTextContent('0');
+    expect(countValue).toHaveTextContent("0");
     expect(incrementButton).toBeInTheDocument();
     expect(decrementButton).toBeInTheDocument();
   });
 
-  it('should render correctly with initial state specified', () => {
-    render(<Counter initialState={{count: 5}}/>);
+  it("should render correctly with initial state specified", () => {
+    render(<Counter initialState={{ count: 5 }} />);
 
-    const countLabel = screen.getByTestId('count-label');
-    const countValue = screen.getByTestId('count-value');
-    const incrementButton = screen.getByTestId('increment-button');
-    const decrementButton = screen.getByTestId('decrement-button');
-  
+    const countLabel = screen.getByTestId("count-label");
+    const countValue = screen.getByTestId("count-value");
+    const incrementButton = screen.getByTestId("increment-button");
+    const decrementButton = screen.getByTestId("decrement-button");
+
     expect(countLabel).toBeInTheDocument();
     expect(countValue).toBeInTheDocument();
-    expect(countValue).toHaveTextContent('5');
+    expect(countValue).toHaveTextContent("5");
     expect(incrementButton).toBeInTheDocument();
     expect(decrementButton).toBeInTheDocument();
   });
 
-  it('should increment count correctly when clicking on the + button', async () => {
+  it("should increment count correctly when clicking on the + button", async () => {
     render(<Counter />);
 
-    const countValue = screen.getByTestId('count-value');
-    const incrementButton = screen.getByTestId('increment-button');
-  
-    expect(countValue).toHaveTextContent('0');
+    const countValue = screen.getByTestId("count-value");
+    const incrementButton = screen.getByTestId("increment-button");
+
+    expect(countValue).toHaveTextContent("0");
     await userEvent.click(incrementButton);
-    expect(countValue).toHaveTextContent('1');
+    expect(countValue).toHaveTextContent("1");
 
     await userEvent.dblClick(incrementButton);
-    expect(countValue).toHaveTextContent('3');
+    expect(countValue).toHaveTextContent("3");
   });
 
-  it('should decrement count correctly when clicking on the - button', async () => {
- 
-
+  it("should decrement count correctly when clicking on the - button", async () => {
+    render(<Counter />);
+    const countValue = screen.getByTestId("count-value");
+    const decrementValue = screen.getByTestId("decrement-button");
+    expect(countValue).toHaveTextContent("0");
+    await userEvent.click(decrementValue);
+    expect(countValue).toHaveTextContent("-1");
+    await userEvent.dblClick(decrementValue);
+    expect(countValue).toHaveTextContent("-3");
   });
 });
 
-describe('counterReducer', () => {
-  it('should increment the count by 1 when the action type is INCREMENT', () => {});
+describe("counterReducer", () => {
+  it("should increment the count by 1 when the action type is INCREMENT", async () => {
+    render(<Counter />);
+    const countValue = screen.getByTestId("count-value");
+    const incrementValue = screen.getByTestId("increment-button");
+    expect(countValue).toHaveTextContent("0");
+    await userEvent.click(incrementValue);
+    expect(countValue).toHaveTextContent("1");
+    await userEvent.dblClick(incrementValue);
+    expect(countValue).toHaveTextContent("3");
+  });
 
-  it('should decrement the count by 1 when the action type is DECREMENT', () => {});
+  it("should decrement the count by 1 when the action type is DECREMENT", async () => {
+    render(<Counter />);
+    const countValue = screen.getByTestId("count-value");
+    const decrementValue = screen.getByTestId("decrement-button");
+    expect(countValue).toHaveTextContent("0");
+    await userEvent.click(decrementValue);
+    expect(countValue).toHaveTextContent("-1");
+    await userEvent.dblClick(decrementValue);
+    expect(countValue).toHaveTextContent("-3");
+  });
 
-  it('should not increment or decrement the count when the action type does not match DECREMENT or INCREMENT', () => {});
+  it("should not increment or decrement the count when the action type does not match DECREMENT or INCREMENT", () => {
+    render(<Counter />);
+    const countValue = screen.getByTestId("count-value");
+    expect(countValue).toHaveTextContent("0");
+  });
 });
