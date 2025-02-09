@@ -1,5 +1,5 @@
 import "./styles.css";
 
-export const HeadingS = ({ headingSTitle }) => {
-  return <h4 className="heading-s">{headingSTitle}HeadingS</h4>;
+export const HeadingS = ({ title }) => {
+  return <h4 className="heading-s">{title}HeadingS</h4>;
 };

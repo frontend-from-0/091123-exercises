@@ -1,5 +1,6 @@
 import "./styles.css";
 
-export const Display = ({ titleDisplay }) => {
-  return <h1 className="display-title">{titleDisplay} Display</h1>;
+export const Display = ({ title }) => {
+  return <h1 className="display-title">{title} </h1>;
 };
+export default Display;

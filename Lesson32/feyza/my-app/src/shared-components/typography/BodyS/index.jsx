@@ -1,5 +1,5 @@
 import "./styles.css";
 
-export const BodyS = ({ bodySText }) => {
-  return <p className="text-s">{bodySText}</p>;
+export const BodyS = ({ text }) => {
+  return <p className="text-s">{text}</p>;
 };
