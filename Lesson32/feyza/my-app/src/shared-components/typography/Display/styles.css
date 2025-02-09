@@ -1,0 +1,8 @@
+.display-tittle {
+  color: var(--Dark-Navy, #313e51);
+  font-family: Rubik;
+  font-size: 144px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+}
