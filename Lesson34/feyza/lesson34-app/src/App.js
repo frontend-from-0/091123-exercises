@@ -5,21 +5,13 @@ import { useState, useContext } from "react";
 import { todoData } from "./data";
 import { UserProvider } from "./userContext";
 import { Account } from "./components/Account";
-import { UserContext } from "./components/UserContext";
+import { UserContext } from "./userContext";
 import { LogIn } from "./components/Login";
 import "./App.css";
 
 export const App = () => {
   const [todos, setTodos] = useState(todoData);
   const user = useContext(UserContext);
-
-  const loggedInUser = {
-    isLoggedInUser: true,
-    username: "johndoe01",
-  };
-  const loggedOutUser = {
-    isLoggedInUser: false,
-  };
 
   return (
     <UserProvider initialState={loggedOutUser}>

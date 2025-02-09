@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useState, useContext, useEffect } from "react";
 import "./styles.css";
-import { UserContext } from "../userContext";
+import { UserContext } from "../../userContext";
 
-export const UserDetailsForm = ({ incomingUsername }) => {
+export const UserDetailsForm = () => {
+  const dispatch = useContext(UserContext);
+
   const [username, setUsername] = useState(incomingUsername);
-  const { dispatch } = useContext(UserContext);
 
   useEffect(() => {
     setUsername(incomingUsername);
@@ -14,6 +15,7 @@ export const UserDetailsForm = ({ incomingUsername }) => {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("New user name is: ", username);
+    dispatch({ type: "SET_USERNAME", payload: username });
   }
 
   return (

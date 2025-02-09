@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { UserDispatchContext, UserActionTypes } from "../../userContext";
+import { UserActionTypes, UserDispatchContext } from "../../userContext";
 
 export const LogIn = () => {
   const [username, setUserName] = useState("");
@@ -10,7 +10,7 @@ export const LogIn = () => {
     e.preventDefault();
     dispatch({
       type: UserActionTypes.login,
-      payload: { username, isLoggedInUser: true },
+      payload: { username },
     });
   };
 

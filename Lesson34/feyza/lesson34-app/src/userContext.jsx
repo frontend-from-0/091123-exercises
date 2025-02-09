@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 
 export const UserContext = createContext();
 export const UserDispatchContext = createContext();
@@ -7,7 +7,7 @@ export const UserProvider = ({ children, initialState }) => {
   const [user, dispatch] = useReducer(userReducer, initialState ?? {});
 
   return (
-    <UserContext.Provider value={loggedOutUser}>
+    <UserContext.Provider value={user}>
       <UserDispatchContext.Provider value={dispatch}>
         {children}
       </UserDispatchContext.Provider>
