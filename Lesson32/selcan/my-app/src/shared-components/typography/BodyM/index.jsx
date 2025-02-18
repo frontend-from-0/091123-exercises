@@ -1,8 +1,5 @@
-import './styles.css';
+import "./styles.css";
 
-export const BodyM = ({title, bold}) => {
-
-  return (
-    <h2 className={bold ? 'bold' : ''}>{title}</h2>
-  );
-}
+export const BodyM = ({ title, bold }) => {
+  return <p className={bold ? "bold" : ""}>{title}</p>;
+};
