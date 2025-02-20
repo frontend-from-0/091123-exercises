@@ -32,8 +32,10 @@ form.addEventListener('submit', function (event) {
 		email: emailInput.value,
 	};
 
+
 	if (isFormCorrect) {
 		console.table(formData);
+		document.getElementById("myForm").reset();
 	} else {
 		console.error('Form incorrect.');
 	}
