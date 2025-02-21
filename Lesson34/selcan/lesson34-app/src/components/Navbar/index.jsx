@@ -1,4 +1,5 @@
 
+
 import { useContext } from "react";
 import "./styles.css";
 import {
@@ -24,16 +25,19 @@ export const Navbar = () => {
       },
     });
   }
-=======
+
 import './styles.css';
 
 export const Navbar = () => {
+
+
 
 
   return (
     <nav className="navigation">
       <ul className="navigation-list">
         <li>Home</li>
+
 
         {user.isLoggedInUser ? <li>Account</li> : <></>}
         {user.isLoggedInUser ? (
@@ -45,12 +49,10 @@ export const Navbar = () => {
     </nav>
   );
 };
-=======
         <li>Account</li>
         <li>Sign in</li>
         <li>Sign up</li>
       </ul>
     </nav>
   )
-}
 
