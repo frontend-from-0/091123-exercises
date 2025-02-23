@@ -1,21 +1,33 @@
-import { useState } from "react"
-
-import './styles.css';
+import { useState } from "react";
+import {
+  UserContext,
+  
+} from "../../userContext";
+import "./styles.css";
 
 // TODO: Update component so that it's possible to change user name and save new user name in the UserContext
 
 export const UserDetailsForm = () => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
+  const { setUser } = useContext(UserContext); 
 
-  function handleSubmit (e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('New user name is: ', username);
-  };
+    console.log("New user name is: ", username);
+    
+    setUser((prevUser) => ({ ...prevUser, username: username });
+    );
+  }
 
   return (
-    <form className='user-details-form' onSubmit={handleSubmit}>
-      <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} value={username} />
+    <form className="user-details-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="username"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
+      />
       <button type="submit">Save</button>
     </form>
-  )
-}
+  );
+};

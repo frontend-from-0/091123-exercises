@@ -1,10 +1,18 @@
-import {UserDetailsForm} from '../UserDetailsForm';
+import React, { useContext } from "react";
+import { UserContext } from "../../userContext";
 
-export const Account = () => {
+const Account = () => {
+  const { user } = useContext(UserContext);
+
   return (
-    <div className="account-container">
-      <h1>Account information</h1>
-      <UserDetailsForm />
+    <div>
+      {user.isLoggedInUser ? (
+        <p>Welcome!</p>
+      ) : (
+        <p>Please log in to see your account information.</p>
+      )}
     </div>
-  )
-}
+  );
+};
+
+export default Account;

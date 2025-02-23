@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
 export const UserContext = createContext();
 export const UserDispatchContext = createContext();
@@ -10,12 +10,14 @@ export const UserActionTypes = {
 };
 
 export const UserProvider = ({ children, initialState }) => {
-  const [user, dispatch] = useReducer(userReducer, initialState ?? {});
-
-  // const [user,setUser] = useState(initialState ??());
+  const [user, setUser] = useState(initialState ?? { isLoggedInUser: false });
+  const [state, dispatch] = useReducer(
+    userReducer,
+    initialState ?? { isLoggedInUser: false }
+  );
 
   return (
-    <UserContext.Provider value={user}>
+    <UserContext.Provider value={{ user, setUser }}>
       <UserDispatchContext.Provider value={dispatch}>
         {children}
       </UserDispatchContext.Provider>
@@ -26,12 +28,14 @@ export const UserProvider = ({ children, initialState }) => {
 function userReducer(state, action) {
   switch (action.type) {
     case UserActionTypes.login:
-      return action.payload;
+      return { ...state, isLoggedInUser: true };
     case UserActionTypes.logout:
-      return { isLoggedInUser: false };
+      return { ...state, isLoggedInUser: false };
     case UserActionTypes.update:
       return { ...state, ...action.payload };
     default:
-      throw Error(`Action type ${action.type} is not supperted`);
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
+
+export default userReducer;

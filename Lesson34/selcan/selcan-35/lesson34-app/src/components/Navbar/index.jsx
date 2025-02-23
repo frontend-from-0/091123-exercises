@@ -1,41 +1,44 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import "./styles.css";
 import {
   UserContext,
   UserDispatchContext,
   UserActionTypes,
-} from "../..//userContext.jsx";
+} from "../../userContext";
 
-export const Navbar = () => {
-  const User = useContext(UserContext);
+const Navbar = () => {
+  const { user } = useContext(UserContext);
   const dispatch = useContext(UserDispatchContext);
 
-  function handleSignOutClick() {
-    dispatch({ type: UserActionTypes.logout });
-  }
-
-  function handleSignInClick() {
+  const handleSignInClick = () => {
     dispatch({
       type: UserActionTypes.login,
-      payload: {
-        isLoggedInUser: true,
-        username: "user",
-        password: "password",
-      },
+      payload: { isLoggedInUser: true },
     });
-  }
+  };
+
+  const handleSignOutClick = () => {
+    console.log("Sign Out clicked");
+    dispatch({ type: UserActionTypes.logout });
+  };
+
+  console.log("User state:", user);
 
   return (
     <nav className="navigation">
       <ul className="navigation-list">
         <li>Home</li>
-        {User.isLoggedInUser ? <li>Account</li> : <></>}
-        {User.isLoggedInUser ? (
-          <li onClick={handleSignOutClick}>Sign out</li>
+        {user.isLoggedInUser ? (
+          <>
+            <li>Account</li>
+            <li onClick={handleSignOutClick}>Sign Out</li>
+          </>
         ) : (
-          <li onClick={handleSignInClick}>Sign in</li>
+          <li onClick={handleSignInClick}>Sign In</li>
         )}
       </ul>
     </nav>
   );
 };
+
+export default Navbar;
