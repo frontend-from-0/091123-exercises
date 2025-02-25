@@ -19,7 +19,10 @@ const Navbar = () => {
 
   const handleSignOutClick = () => {
     console.log("Sign Out clicked");
-    dispatch({ type: UserActionTypes.logout });
+    dispatch({
+      type: UserActionTypes.logout,
+      payload: { isLoggedInUser: false },
+    });
   };
 
   console.log("User state:", user);

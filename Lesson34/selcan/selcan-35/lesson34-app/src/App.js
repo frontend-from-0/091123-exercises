@@ -24,7 +24,6 @@ export const App = () => {
 
 	return (
 		<UserProvider initialState={loggedOutUser}>
-
 			<div className='container'>
 				<Navbar />
 				<LoginForm />
