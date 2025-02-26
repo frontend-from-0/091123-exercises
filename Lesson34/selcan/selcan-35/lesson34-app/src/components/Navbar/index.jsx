@@ -1,19 +1,18 @@
 import React, { useContext } from "react";
 import "./styles.css";
 import {
-  UserContext,
+  useUser,
   UserDispatchContext,
   UserActionTypes,
 } from "../../userContext";
 
 const Navbar = () => {
-  const { user } = useContext(UserContext);
+  const user = useUser();
   const dispatch = useContext(UserDispatchContext);
 
   const handleSignInClick = () => {
     dispatch({
       type: UserActionTypes.login,
-      payload: { isLoggedInUser: true },
     });
   };
 
@@ -21,7 +20,6 @@ const Navbar = () => {
     console.log("Sign Out clicked");
     dispatch({
       type: UserActionTypes.logout,
-      payload: { isLoggedInUser: false },
     });
   };
 

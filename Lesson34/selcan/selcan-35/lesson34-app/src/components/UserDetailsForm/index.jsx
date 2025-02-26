@@ -1,23 +1,34 @@
-import { useState } from "react";
-import {
-  UserContext,
-  
-} from "../../userContext";
+import React, { useState } from "react";
+import { useUserDispatch, UserActionTypes } from "../../userContext";
 import "./styles.css";
 
 // TODO: Update component so that it's possible to change user name and save new user name in the UserContext
 
 export const UserDetailsForm = () => {
+  const dispatch = useUserDispatch();
   const [username, setUsername] = useState("");
-  const { setUser } = useContext(UserContext); 
+  const [error, setError] = useState("");
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("New user name is: ", username);
-    
-    setUser((prevUser) => ({ ...prevUser, username: username });
-    );
-  }
+
+    if (username.trim() === "") {
+      setError("Username cannot be empty.");
+      return;
+    }
+
+    if (username.length < 3) {
+      setError("Username must be at least 3 characters long.");
+      return;
+    }
+
+    dispatch({
+      type: UserActionTypes.update,
+      payload: { username: username },
+    });
+    setError("");
+  };
 
   return (
     <form className="user-details-form" onSubmit={handleSubmit}>
@@ -27,7 +38,9 @@ export const UserDetailsForm = () => {
         onChange={(e) => setUsername(e.target.value)}
         value={username}
       />
-      <button type="submit">Save</button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
   );
 };
+
+export default UserDetailsForm;

@@ -15,7 +15,7 @@ import './App.css';
 // If user is logged out, show Log In component.
 
 
-export const App = () => {
+const App = () => {
 	const [todos, setTodos] = useState(todoData);
 
 	const loggedOutUser = {
@@ -40,3 +40,4 @@ export const App = () => {
 		</UserProvider>
 	);
 };
+export default App;

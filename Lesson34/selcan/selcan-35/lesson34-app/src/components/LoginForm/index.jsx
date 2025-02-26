@@ -1,36 +1,51 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../../userContext";
+import React, { useState } from "react";
+import { useUserDispatch, UserActionTypes } from "../../userContext";
 
 const LoginForm = () => {
-  const { setUser } = useContext(UserContext);
+  const dispatch = useUserDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Logging in with username: ", username);
 
-    if (username && password) {
-      setUser({ isLoggedInUser: true });
+    if (username.trim() === "" || password.trim() === "") {
+      setError("Username and password cannot be empty.");
+      return;
     }
+
+    dispatch({ type: UserActionTypes.login });
+    setError("");
   };
 
   return (
     <div className="login-form">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">login</button>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <button type="submit">Login</button>
       </form>
     </div>
   );
