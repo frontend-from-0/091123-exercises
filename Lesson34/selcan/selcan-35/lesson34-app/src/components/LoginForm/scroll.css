@@ -1,0 +1,10 @@
+#login-form {
+  scroll-margin-top: 80px;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#login-form.highlight-form {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}

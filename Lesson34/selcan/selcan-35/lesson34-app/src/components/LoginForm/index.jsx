@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useUserDispatch, UserActionTypes } from "../../userContext";
+import "./scroll.css";
 
 const LoginForm = () => {
   const dispatch = useUserDispatch();
@@ -21,7 +22,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-form" role="form">
+    <div id="login-form" className="login-form" role="form">
       <h1 id="login-title">Login</h1>
       <form onSubmit={handleSubmit} aria-labelledby="login-title">
         <div className="form-group">
