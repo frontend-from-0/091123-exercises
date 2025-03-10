@@ -10,10 +10,6 @@ import LoginForm from './components/LoginForm';
 import './App.css';
 
 
-// TODO: Create a new Component that contains log in form, so that user can type username and password and click submit button to log in.
-// If user is logged in, show Account component. 
-// If user is logged out, show Log In component.
-
 
 const App = () => {
 	const [todos, setTodos] = useState(todoData);

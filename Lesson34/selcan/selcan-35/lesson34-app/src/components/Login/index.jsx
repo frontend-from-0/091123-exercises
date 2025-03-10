@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Account } from "../Account";
 
-// TODO: Create a new Component that contains log in form, so that user can type username and password and click submit button to log in.
-// If user is logged in, show Account component.
-// If user is logged out, show Log In component.
-
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
