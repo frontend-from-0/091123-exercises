@@ -21,31 +21,59 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-form">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="login-form" role="form">
+      <h1 id="login-title">Login</h1>
+      <form onSubmit={handleSubmit} aria-labelledby="login-title">
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">
+            Username:
+            <span aria-hidden="true" style={{ color: "red" }}>
+              {" "}
+              *
+            </span>
+          </label>
           <input
             type="text"
             id="username"
-            placeholder="username"
+            name="username"
+            placeholder="Enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
+            aria-required="true"
+            aria-invalid={error && username.trim() === ""}
+            aria-describedby={error ? "error-message" : undefined}
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">
+            Password:
+            <span aria-hidden="true" style={{ color: "red" }}>
+              {" "}
+              *
+            </span>
+          </label>
           <input
             type="password"
             id="password"
-            placeholder="password"
+            name="password"
+            placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            aria-required="true"
+            aria-invalid={error && password.trim() === ""}
+            aria-describedby={error ? "error-message" : undefined}
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Login</button>
+        {error && (
+          <p id="error-message" role="alert" style={{ color: "red" }}>
+            {error}
+          </p>
+        )}
+        <button type="submit" aria-label="Login to your account">
+          Login
+        </button>
       </form>
     </div>
   );

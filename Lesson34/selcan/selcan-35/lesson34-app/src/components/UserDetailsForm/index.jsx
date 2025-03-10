@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useUserDispatch, UserActionTypes } from "../../userContext";
 import "./styles.css";
 
-// TODO: Update component so that it's possible to change user name and save new user name in the UserContext
-
 export const UserDetailsForm = () => {
   const dispatch = useUserDispatch();
   const [username, setUsername] = useState("");
