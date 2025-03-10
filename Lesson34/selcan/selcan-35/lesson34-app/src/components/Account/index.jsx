@@ -1,31 +1,20 @@
-import React from "react";
-import LoginForm from "../LoginForm";
+import React, { useContext } from "react";
+import { UserContext } from "../../userContext";
+import { UserDetailsForm } from "../UserDetailsForm";
 import { useUser } from "../../userContext";
-import "./styles.css";
 
 const Account = () => {
   const user = useUser();
-  const isLoggedIn = user.isLoggedIn;
 
   return (
-    <main className="account-container" aria-live="polite">
-      <div role="region" aria-label="Hesap Yönetimi" id="login-form">
-        {!isLoggedIn ? (
-          <section aria-labelledby="login-section" className="login-section">
-            <h1 id="login-section">Giriş Yap</h1>
-            <LoginForm />
-          </section>
-        ) : (
-          <section
-            className="welcome-container"
-            aria-labelledby="welcome-heading"
-          >
-            <h2 id="welcome-heading">Hoş Geldiniz!</h2>
-            <p>Başarıyla giriş yaptınız.</p>
-          </section>
-        )}
-      </div>
-    </main>
+    <div>
+      <UserDetailsForm />
+      {user.isLoggedInUser ? (
+        <p>Welcome!</p>
+      ) : (
+        <p>Please log in to see your account information.</p>
+      )}
+    </div>
   );
 };
 
