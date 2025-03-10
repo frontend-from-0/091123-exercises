@@ -5,11 +5,8 @@ import { useState } from 'react';
 import { todoData } from './data';
 import { UserProvider } from './userContext';
 import Account from './components/Account';
-import LoginForm from './components/LoginForm';
 
 import './App.css';
-
-
 
 const App = () => {
 	const [todos, setTodos] = useState(todoData);
@@ -22,11 +19,9 @@ const App = () => {
 		<UserProvider initialState={loggedOutUser}>
 			<div className='container'>
 				<Navbar />
-				<LoginForm />
 				<Account />
 				<div className='app'>
 					<List todos={todos} updateTodos={setTodos} />
-
 					<PerformanceState
 						completedTodos={todos.filter((todo) => todo.completed).length}
 						totalTodos={todos.length}
@@ -36,4 +31,5 @@ const App = () => {
 		</UserProvider>
 	);
 };
+
 export default App;

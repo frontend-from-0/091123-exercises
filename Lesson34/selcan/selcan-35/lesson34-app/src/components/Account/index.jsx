@@ -1,15 +1,17 @@
 import React from "react";
 import LoginForm from "../LoginForm";
-import { useUserState } from "../../userContext";
+import { useUser } from "../../userContext";
+import "./styles.css";
 
 const Account = () => {
-  const { isLoggedIn } = useUserState();
+  const user = useUser();
+  const isLoggedIn = user.isLoggedIn;
 
   return (
     <main className="account-container" aria-live="polite">
-      <div role="region" aria-label="Hesap Yönetimi">
+      <div role="region" aria-label="Hesap Yönetimi" id="login-form">
         {!isLoggedIn ? (
-          <section aria-labelledby="login-section">
+          <section aria-labelledby="login-section" className="login-section">
             <h1 id="login-section">Giriş Yap</h1>
             <LoginForm />
           </section>

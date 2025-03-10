@@ -1,0 +1,31 @@
+.account-container {
+  max-width: 800px;
+  margin: 80px auto 20px;
+  padding: 20px;
+}
+
+.login-section {
+  scroll-margin-top: 100px;
+}
+
+.welcome-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#login-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#login-form {
+  transition: all 0.3s ease;
+}
+
+#login-form.highlight-form {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  transform: scale(1.01);
+}

@@ -12,6 +12,7 @@ export const UserActionTypes = {
 const initialState = {
   isLoggedInUser: false,
   username: "",
+  password: "",
 };
 
 function userReducer(state, action) {
@@ -19,9 +20,9 @@ function userReducer(state, action) {
     case UserActionTypes.login:
       return { ...state, isLoggedInUser: true };
     case UserActionTypes.logout:
-      return { ...state, isLoggedInUser: false };
+      return { ...state, isLoggedInUser: false, username: "", password: "" };
     case UserActionTypes.update:
-      return { ...state, ...action.payload };
+      return { ...state, ...action.payload, username: "", password: "" };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

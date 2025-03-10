@@ -21,10 +21,10 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-form" role="form">
+    <div className="login-form " role="form">
       <h1 id="login-title">Login</h1>
       <form onSubmit={handleSubmit} aria-labelledby="login-title">
-        <div>
+        <div className="form-group">
           <label htmlFor="username">
             Username:
             <span aria-hidden="true" style={{ color: "red" }}>
@@ -45,7 +45,7 @@ const LoginForm = () => {
             aria-describedby={error ? "error-message" : undefined}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password">
             Password:
             <span aria-hidden="true" style={{ color: "red" }}>
@@ -67,7 +67,7 @@ const LoginForm = () => {
           />
         </div>
         {error && (
-          <p id="error-message" role="alert" style={{ color: "red" }}>
+          <p id="error-message" role="alert" className="error-message">
             {error}
           </p>
         )}
