@@ -8,11 +8,6 @@ import Account from './components/Account';
 
 import './App.css';
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 847752d30562429957bb6df83aa84fef8ce946b8
 const App = () => {
 	const [todos, setTodos] = useState(todoData);
 

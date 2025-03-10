@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { UserContext } from "../../userContext";
 import { UserDetailsForm } from "../UserDetailsForm";
 import { useUser } from "../../userContext";
+import LoginForm from "../LoginForm";
 
 const Account = () => {
   const user = useUser();
 
   return (
     <div>
+      <LoginForm />
       <UserDetailsForm />
       {user.isLoggedInUser ? (
         <p>Welcome!</p>
